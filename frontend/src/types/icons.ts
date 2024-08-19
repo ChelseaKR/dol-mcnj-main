@@ -1286,3 +1286,17 @@ export interface IconCardProps {
   url?: string;
   titleType?: "h2" | "h3";
 }
+
+export interface ToolCardProps {
+  i: string;
+  centered?: boolean;
+  icon?: string;
+  title?: string;
+  description?: string;
+  titleType?: "h2" | "h3";
+  className?: string;
+  svg?: keyof typeof Svg;
+  iconWeight?: "thin" | "light" | "regular" | "bold" | "fill" | "duotone";
+  indicator?: string;
+  bgColor?: string;
+}

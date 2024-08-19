@@ -8,7 +8,7 @@ import { HomeBanner } from "../components/HomeBanner";
 import CardRow from "../components/CardRow";
 import { IconCard } from "../components/IconCard";
 import { SectionHeading } from "../components/modules/SectionHeading";
-import { IntroBlocks } from "../components/IntroBlocks";
+// import { IntroBlocks } from "../components/IntroBlocks";
 import { UpdateNotifier } from "../components/UpdateNotifier";
 import { usePageTitle } from "../utils/usePageTitle";
 import pageImage from "../images/ogImages/homePage.jpg";
@@ -28,7 +28,8 @@ export const LandingPage = (props: Props): ReactElement => {
 
   const seoObject = {
     title: pageData?.title || (process.env.REACT_APP_SITE_NAME as string),
-    pageDescription: "Explore My Career NJ to find job training, career resources, and employment opportunities with the New Jersey Department of Labor.",
+    pageDescription:
+      "Explore My Career NJ to find job training, career resources, and employment opportunities with the New Jersey Department of Labor.",
     image: pageData?.ogImage?.url || pageImage,
     keywords: pageData?.keywords,
     url: props.location?.pathname || "/",
@@ -59,7 +60,7 @@ export const LandingPage = (props: Props): ReactElement => {
               subheading={pageData.bannerMessage}
               preload
             />
-            {pageData.introBlocks && <IntroBlocks {...pageData.introBlocks} />}
+            {/* {pageData.introBlocks && <IntroBlocks {...pageData.introBlocks} />} */}
             <div className="container" id="homeContent">
               <div className="tools">
                 <SectionHeading heading="Explore Tools" strikeThrough />
