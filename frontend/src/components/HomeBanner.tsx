@@ -10,7 +10,7 @@ interface HomeBannerProps {
   image?: ImageProps;
   buttonCopy?: string;
   preload?: boolean;
-  i: number;
+  i?: number;
 }
 
 export const HomeBanner = ({
@@ -39,6 +39,7 @@ export const HomeBanner = ({
           title="I am looking for jobs based on my skills and interests."
           description="Upload your resume to see personalized job and training recommendations."
           className="heroCard"
+          btnType="primary"
         ></HomeToolCard>
         <HomeToolCard
           i="1"
@@ -46,6 +47,7 @@ export const HomeBanner = ({
           title="I am looking to up-skill or do job training."
           description="Search by job, training program, and more to find a training that works for you."
           className="heroCard"
+          btnType="secondary"
         ></HomeToolCard>
         <HomeToolCard
           i="2"
@@ -53,6 +55,7 @@ export const HomeBanner = ({
           title="I am unsure and just browsing."
           description="Explore popular industries to see what it takes to enter or progress in them."
           className="heroCard"
+          btnType="tertiary"
         ></HomeToolCard>
       </div>
       <div className="introBlock">
@@ -61,7 +64,7 @@ export const HomeBanner = ({
           <h2>
             No matter where you are on your career journey, My Career NJ is here to help you.{" "}
           </h2>
-          <p>
+          <p className="introP">
             Explore a connected suite of career, job, and training tools to help level up your
             career.
           </p>

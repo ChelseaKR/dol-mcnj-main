@@ -3,10 +3,13 @@
   color: $white;
   font-size: $size-16;
   line-height: 1;
-  padding: 4rem 0;
-
-  @media screen and (max-width: ($tablet-md - 1)) {
-    padding: 2rem 0;
+  padding: 4rem;
+  width: 100%;
+  margin: auto;
+  @media screen and (max-width: (
+        $tablet-md - 1,
+      )) {
+    padding: 2rem;
   }
 
   p {
@@ -106,4 +109,166 @@
     width: 100%;
     height: auto;
   }
+}
+
+.homeHero {
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.heroPrompt {
+  font-size: xx-large;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+
+  @media screen and (max-width: ($tablet-md - 1)) {
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    font-size: x-large;
+  }
+}
+
+.toolCardRow {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.heroCard {
+  flex: 1; /* Equal width for all items */
+  background-color: $primary-lighter;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.heroContent {
+  flex-direction: column;
+  text-align: left;
+  min-width: 270px;
+  border-radius: 8px;
+}
+
+.heroBtn {
+  width: 100%;
+}
+
+.heroTitle {
+  font-weight: bold;
+  line-height: 1.2;
+  margin: $size-12 0;
+  font-size: $size-18;
+  color: $ink;
+}
+
+.heroDescription {
+  font-size: $size-14;
+  line-height: $size-20;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  color: $ink;
+}
+
+.card-details {
+  text-align: left;
+  color: $ink;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.heroPill {
+  border-radius: 100px;
+  padding: 1rem;
+  background-color: white;
+  color: black;
+  margin: auto;
+  width: fit-content;
+}
+
+.bannerColorful {
+  display: flex;
+  height: 1.75rem;
+  align-items: flex-start;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.bannerColorfulBox {
+  flex: 1 0 0;
+  align-self: stretch;
+  background-color: white;
+  position: relative;
+}
+
+.introBlock {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 2rem;
+  background: $primary-darker;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin: 6rem auto;
+
+  @media screen and (max-width: ($tablet-md)) {
+    flex-direction: column;
+  }
+}
+
+.leftBlock {
+  flex: 1;
+  border: black 10px;
+  min-width: 0;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 100%;
+}
+
+.rightBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: start;
+  min-width: 320px;
+}
+
+.rightBlock > h2 {
+  font-size: xx-large;
+}
+
+.rightBlock > p {
+  font-size: large;
+  padding: 0rem;
+  margin: 0rem;
+}
+
+.flexImage {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  flex: 1;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.rightImage {
+  flex: auto;
+  display: flex;
+  object-fit: cover;
+  min-width: 0;
+  border-radius: 8px;
+  gap: 1rem;
 }

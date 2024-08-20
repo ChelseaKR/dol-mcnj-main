@@ -17,6 +17,7 @@ const HomeToolCard = ({
   indicator,
   title,
   i,
+  btnType,
   titleType,
 }: ToolCardProps) => {
   const iconName = icon as IconNames;
@@ -48,10 +49,10 @@ const HomeToolCard = ({
         <div className="heroBtn">
           {" "}
           <Button
-            className="primary"
+            className={btnType}
             type="button"
             url="/training"
-            copy={btnCopy[i]}
+            copy={btnCopy[parseInt(i)]}
             iconSuffix={"ArrowRight" as IconNames}
           />
         </div>

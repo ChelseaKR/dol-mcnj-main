@@ -1299,4 +1299,5 @@ export interface ToolCardProps {
   iconWeight?: "thin" | "light" | "regular" | "bold" | "fill" | "duotone";
   indicator?: string;
   bgColor?: string;
+  btnType?: "primary" | "secondary" | "tertiary";
 }
