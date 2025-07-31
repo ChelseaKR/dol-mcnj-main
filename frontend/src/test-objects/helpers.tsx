@@ -21,9 +21,10 @@ export function renderWithRouter(
 }
 
 export const waitForEffect = async (): Promise<undefined> => {
-  return act(async () => {
+  await act(async () => {
     await new Promise((resolve) => setImmediate(resolve));
   });
+  return undefined;
 };
 
 export const withContextualInfo = (
