@@ -1,12 +1,12 @@
 import { ReactElement, useEffect, useState } from "react";
 import { RouteComponentProps } from "@reach/router";
-import { Client } from "./domain/Client";
+import { Client } from "../domain/Client";
 import { InDemandOccupation } from "./domain/Occupation";
 import { MajorGroup } from "./MajorGroup";
 import { Typeahead } from "./Typeahead";
 import { useTranslation } from "react-i18next";
 import { Layout } from "../components/Layout";
-import { usePageTitle } from "./utils/usePageTitle";
+import { usePageTitle } from "../utils/usePageTitle";
 import pageImage from "/images/ogImages/inDemand.jpg";
 import { HeroBanner } from "../components/HeroBanner";
 

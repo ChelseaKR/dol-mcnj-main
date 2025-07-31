@@ -1,18 +1,18 @@
 import { RouteComponentProps } from "@reach/router";
 import { ReactElement } from "react";
 import { Layout } from "../components/Layout";
-import { Client } from "./domain/Client";
-import { useContentful } from "./utils/useContentful";
-import { HomepageProps } from "./types/contentful";
-import { HomeBanner } from "./components/HomeBanner";
+import { Client } from "../domain/Client";
+import { useContentful } from "../utils/useContentful";
+import { HomepageProps } from "../types/contentful";
+import { HomeBanner } from "../../components/HomeBanner";
 
-import { usePageTitle } from "./utils/usePageTitle";
+import { usePageTitle } from "../utils/usePageTitle";
 import pageImage from "/images/ogImages/homePage.jpg";
 import { useTranslation } from "react-i18next";
 import { content } from "./content";
 import { CardProps } from "../components/Card";
-import { TopTools } from "./components/TopTools";
-import { Resources } from "./components/Resourses";
+import { TopTools } from "../../components/TopTools";
+import { Resources } from "../../components/Resourses";
 
 interface Props extends RouteComponentProps {
   client: Client;

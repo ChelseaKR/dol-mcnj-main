@@ -1,11 +1,11 @@
 import { ReactElement } from "react";
 import { RouteComponentProps } from "@reach/router";
-import { Client } from "./domain/Client";
+import { Client } from "../domain/Client";
 import { FaqCollection } from "../components/FaqCollection";
-import { FaqPageData, LinkObjectProps, ThemeColors } from "./types/contentful";
+import { FaqPageData, LinkObjectProps, ThemeColors } from "../types/contentful";
 import { Layout } from "../components/Layout";
 import { CtaBanner } from "../components/CtaBanner";
-import { useContentful } from "./utils/useContentful";
+import { useContentful } from "../utils/useContentful";
 import pageImage from "/images/ogImages/faq.jpg";
 import { HeroBanner } from "../components/HeroBanner";
 import { useTranslation } from "react-i18next";

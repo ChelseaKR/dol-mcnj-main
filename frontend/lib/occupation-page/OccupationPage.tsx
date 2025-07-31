@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from "react";
 import { Link, RouteComponentProps } from "@reach/router";
-import { Client } from "./domain/Client";
+import { Client } from "../domain/Client";
 import { Occupation, OccupationDetail } from "./domain/Occupation";
 import { Grouping } from "../components/Grouping";
 import { InlineIcon } from "../components/InlineIcon";
@@ -17,7 +17,7 @@ import { useTranslation } from "react-i18next";
 import { logEvent } from "./analytics";
 import { Layout } from "../components/Layout";
 import { InDemandBlock } from "../components/InDemandBlock";
-import { usePageTitle } from "./utils/usePageTitle";
+import { usePageTitle } from "../utils/usePageTitle";
 import { Helmet } from "react-helmet-async";
 
 interface Props extends RouteComponentProps {

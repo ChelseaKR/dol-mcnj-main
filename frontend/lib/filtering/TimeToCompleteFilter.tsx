@@ -5,7 +5,7 @@ import { FilterActionType, FilterContext } from "./FilterContext";
 import { FilterableElement } from "./domain/Filter";
 import { CalendarLength, TrainingResult } from "./domain/Training";
 import { useTranslation } from "react-i18next";
-import { toggleParams } from "./utils/updateUrlParams";
+import { toggleParams } from "../utils/updateUrlParams";
 
 interface TimeToComplete {
   days: boolean;

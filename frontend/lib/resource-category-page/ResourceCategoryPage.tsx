@@ -1,11 +1,11 @@
 import { RouteComponentProps } from "@reach/router";
 import { ReactElement } from "react";
 import { Layout } from "../components/Layout";
-import { Client } from "./domain/Client";
-import { ResourceCategoryPageProps } from "./types/contentful";
+import { Client } from "../domain/Client";
+import { ResourceCategoryPageProps } from "../types/contentful";
 import { PageBanner } from "../components/PageBanner";
 // import { ResourceList } from "../components/ResourceList";
-import { useContentful } from "./utils/useContentful";
+import { useContentful } from "../utils/useContentful";
 
 interface Props extends RouteComponentProps {
   client: Client;

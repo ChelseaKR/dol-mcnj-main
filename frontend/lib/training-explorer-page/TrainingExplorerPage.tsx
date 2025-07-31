@@ -1,15 +1,15 @@
 import { RouteComponentProps } from "@reach/router";
 import { ReactElement } from "react";
 import { Layout } from "../components/Layout";
-import { Client } from "./domain/Client";
-import { TrainingExplorerPageProps } from "./types/contentful";
+import { Client } from "../domain/Client";
+import { TrainingExplorerPageProps } from "../types/contentful";
 import { HowTo } from "../components/HowTo";
 // import { Accordion } from "../components/Accordion";
 import { Interrupter } from "../components/Interrupter";
 import { CtaBanner } from "../components/CtaBanner";
 // import { IconNames } from "./types/icons";
 // import { SectionHeading } from "../components/modules/SectionHeading";
-import { useContentful } from "./utils/useContentful";
+import { useContentful } from "../utils/useContentful";
 import { useTranslation } from "react-i18next";
 import pageImage from "/images/ogImages/trainingExplorer.jpg";
 import { TrainingExplorerHeading } from "../components/TrainingExplorerHeading";

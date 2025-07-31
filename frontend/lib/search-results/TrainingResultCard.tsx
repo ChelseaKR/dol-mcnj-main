@@ -9,7 +9,7 @@ import { SpacedCheckbox } from "../components/SpacedCheckbox";
 import { FormGroup, FormControlLabel, useMediaQuery } from "@material-ui/core";
 import { ComparisonActionType, ComparisonContext } from "./comparison/ComparisonContext";
 import { useTranslation } from "react-i18next";
-import { formatCip } from "./utils/formatCip";
+import { formatCip } from "../utils/formatCip";
 
 interface Props {
   trainingResult: TrainingResult;

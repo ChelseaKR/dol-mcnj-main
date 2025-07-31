@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Client } from "./domain/Client";
+import { Client } from "../domain/Client";
 import { Redirect } from "@reach/router";
 
 export const FaqRoutes = ({ client }: { client: Client }): ReactElement => {

@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
 import { Icon } from "@material-ui/core";
-import { Layout } from "../components/Layout";
-import { Client } from "./domain/Client";
-import { usePageTitle } from "./utils/usePageTitle";
+import { Layout } from "../../components/Layout";
+import { Client } from "../domain/Client";
+import { usePageTitle } from "../utils/usePageTitle";
 import { Helmet } from "react-helmet-async";
 
 interface Props {

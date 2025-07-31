@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useState, useRef } from "react";
 import { Link, RouteComponentProps } from "@reach/router";
 
-import { Client } from "./domain/Client";
+import { Client } from "../domain/Client";
 import { Error } from "./domain/Error";
 import { Training } from "./domain/Training";
 import { InlineIcon } from "../components/InlineIcon";
@@ -16,7 +16,7 @@ import { StatBlock } from "../components/StatBlock";
 import { UnstyledButton } from "../components/UnstyledButton";
 import { CipDrawerContent } from "../components/CipDrawerContent";
 
-import { usePageTitle } from "./utils/usePageTitle";
+import { usePageTitle } from "../utils/usePageTitle";
 
 import { formatPercentEmployed } from "./presenters/formatPercentEmployed";
 
@@ -35,7 +35,7 @@ import { LinkSimple, Printer } from "@phosphor-icons/react";
 import { Helmet } from "react-helmet-async";
 import { Button } from "../components/Button";
 import { Flag } from "@phosphor-icons/react";
-import { formatCip } from "./utils/formatCip";
+import { formatCip } from "../utils/formatCip";
 
 interface Props extends RouteComponentProps {
   client: Client;

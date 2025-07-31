@@ -1,11 +1,11 @@
 import { ReactElement } from "react";
 import { RouteComponentProps } from "@reach/router";
-import { Client } from "./domain/Client";
-import { TrainingProviderData } from "./types/contentful";
+import { Client } from "../domain/Client";
+import { TrainingProviderData } from "../types/contentful";
 import { Layout } from "../components/Layout";
 import { TabContent } from "../components/TabContent";
-import { usePageTitle } from "./utils/usePageTitle";
-import { useContentful } from "./utils/useContentful";
+import { usePageTitle } from "../utils/usePageTitle";
+import { useContentful } from "../utils/useContentful";
 import pageImage from "/images/ogImages/trainingProviderResources.jpg";
 import { HeroBanner } from "../components/HeroBanner";
 import { useTranslation } from "react-i18next";

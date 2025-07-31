@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
 import { RouteComponentProps } from "@reach/router";
 import { Layout } from "../components/Layout";
-import { Client } from "./domain/Client";
-import { usePageTitle } from "./utils/usePageTitle";
-import { parseMarkdownToHTML } from "./utils/parseMarkdownToHTML";
+import { Client } from "../domain/Client";
+import { usePageTitle } from "../utils/usePageTitle";
+import { parseMarkdownToHTML } from "../utils/parseMarkdownToHTML";
 import { useTranslation } from "react-i18next";
 
 interface Props extends RouteComponentProps {

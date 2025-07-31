@@ -8,8 +8,8 @@ import { UnstyledLinkButton } from "../components/UnstyledLinkButton";
 import { InlineIcon } from "../components/InlineIcon";
 import { ALL_LANGUAGES, DATA_VALUE_TO_LANGUAGE } from "./trainingLanguages";
 import { useTranslation } from "react-i18next";
-import { toggleParams } from "./utils/updateUrlParams";
-import { camelify } from "./utils/slugify";
+import { toggleParams } from "../utils/updateUrlParams";
+import { camelify } from "../utils/slugify";
 
 const COLLAPSED_LIST_LENGTH = 4;
 

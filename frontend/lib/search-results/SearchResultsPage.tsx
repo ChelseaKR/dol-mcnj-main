@@ -1,6 +1,6 @@
 import { ChangeEvent, ReactElement, useContext, useEffect, useState } from "react";
 import { WindowLocation } from "@reach/router";
-import { Client } from "./domain/Client";
+import { Client } from "../domain/Client";
 import { TrainingResult } from "./domain/Training";
 import { RouteComponentProps, Link } from "@reach/router";
 import { TrainingResultCard } from "./TrainingResultCard";
@@ -16,9 +16,9 @@ import { ComparisonContext } from "./comparison/ComparisonContext";
 import { useTranslation } from "react-i18next";
 import { logEvent } from "./analytics";
 import { Layout } from "../components/Layout";
-import { usePageTitle } from "./utils/usePageTitle";
+import { usePageTitle } from "../utils/usePageTitle";
 import { ArrowLeft } from "@phosphor-icons/react";
-import { checkValidSocCode } from "./utils/checkValidCodes";
+import { checkValidSocCode } from "../utils/checkValidCodes";
 import pageImage from "/images/ogImages/searchResults.png";
 import { Helmet } from "react-helmet-async";
 

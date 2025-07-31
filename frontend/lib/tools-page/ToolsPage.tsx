@@ -1,6 +1,6 @@
 import { RouteComponentProps } from "@reach/router";
 import { ReactElement } from "react";
-import { Client } from "./domain/Client";
+import { Client } from "../domain/Client";
 import pageImage from "/images/ogImages/homePage.jpg";
 import { Layout } from "../components/Layout";
 import { HeroBanner } from "../components/HeroBanner";

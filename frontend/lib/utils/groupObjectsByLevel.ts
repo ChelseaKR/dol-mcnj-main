@@ -1,4 +1,4 @@
-import { OccupationNodeProps } from "./types/contentful";
+import { OccupationNodeProps } from "../types/contentful";
 
 export const groupObjectsByLevel = (array: OccupationNodeProps[]): OccupationNodeProps[][] => {
   const result: OccupationNodeProps[][] = [];

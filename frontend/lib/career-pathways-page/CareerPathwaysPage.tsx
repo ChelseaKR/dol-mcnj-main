@@ -14,7 +14,7 @@ import { content } from "./content";
 import { parseMarkdownToHTML } from "../utils/parseMarkdownToHTML";
 import { HeroBanner } from "../../components/HeroBanner";
 import pathwaysImage from "/images/pathways.png";
-// import { parseMarkdownToHTML } from "./utils/parseMarkdownToHTML";
+// import { parseMarkdownToHTML } from "../utils/parseMarkdownToHTML";
 
 interface Props {
   client: Client;

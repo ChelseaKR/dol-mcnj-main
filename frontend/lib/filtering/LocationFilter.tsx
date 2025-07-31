@@ -8,8 +8,8 @@ import { FormControl, InputLabel } from "@material-ui/core";
 import { WhiteSelect } from "../components/WhiteSelect";
 import { getZipCodesInRadius } from "./findZipCodesInRadius";
 import { useTranslation } from "react-i18next";
-import { checkValidZipCode } from "./utils/checkValidZipCode";
-import { updateUrlParams } from "./utils/updateUrlParams";
+import { checkValidZipCode } from "../utils/checkValidZipCode";
+import { updateUrlParams } from "../utils/updateUrlParams";
 export interface SearchArea {
   center: string;
   radius: number;
