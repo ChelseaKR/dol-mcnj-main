@@ -1,6 +1,6 @@
 import { Heading } from "./modules/Heading";
 import { SearchBlock } from "./SearchBlock";
-import { ContentfulRichText } from "../types/contentful";
+import { ContentfulRichText } from "../lib/types/contentful";
 import { LinkObject } from "./modules/LinkObject";
 import { ArrowSquareOut, ArrowRight } from "@phosphor-icons/react";
 

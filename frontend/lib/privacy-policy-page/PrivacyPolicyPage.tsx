@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
 import { RouteComponentProps } from "@reach/router";
 import { Layout } from "../components/Layout";
-import { Client } from "../domain/Client";
-import { usePageTitle } from "../utils/usePageTitle";
-import { parseMarkdownToHTML } from "../utils/parseMarkdownToHTML";
+import { Client } from "./domain/Client";
+import { usePageTitle } from "./utils/usePageTitle";
+import { parseMarkdownToHTML } from "./utils/parseMarkdownToHTML";
 import { useTranslation } from "react-i18next";
 
 interface Props extends RouteComponentProps {
@@ -11,14 +11,14 @@ interface Props extends RouteComponentProps {
 }
 
 export const PrivacyPolicyPage = (props: Props): ReactElement => {
-  usePageTitle(`Privacy Policy | ${process.env.REACT_APP_SITE_NAME}`);
+  usePageTitle(`Privacy Policy | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
   const { t } = useTranslation();
 
   return (
     <Layout
       client={props.client}
       seo={{
-        title: `Privacy Policy | ${process.env.REACT_APP_SITE_NAME}`,
+        title: `Privacy Policy | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
         pageDescription: "Privacy Policy and Information Collection Statement",
         url: props.location?.pathname || "/privacy-policy",
       }}

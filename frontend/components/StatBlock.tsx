@@ -1,8 +1,8 @@
 import { useMediaQuery } from "@material-ui/core";
 import React, { ReactElement, useContext, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { STAT_MISSING_DATA_INDICATOR } from "../constants";
-import { ContextualInfoContext } from "../contextual-info/ContextualInfoContext";
+import { STAT_MISSING_DATA_INDICATOR } from "../lib/constants";
+import { ContextualInfoContext } from "../lib/contextual-info/ContextualInfoContext";
 
 interface Props {
   title: string;

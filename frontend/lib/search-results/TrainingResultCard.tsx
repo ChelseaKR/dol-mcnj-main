@@ -1,15 +1,15 @@
 import React, { ReactElement, useContext } from "react";
-import { TrainingResult } from "../domain/Training";
+import { TrainingResult } from "./domain/Training";
 import { formatMoney } from "accounting";
 import { Link } from "@reach/router";
 import { InlineIcon } from "../components/InlineIcon";
 import { InDemandTag } from "../components/InDemandTag";
-import { formatPercentEmployed } from "../presenters/formatPercentEmployed";
+import { formatPercentEmployed } from "./presenters/formatPercentEmployed";
 import { SpacedCheckbox } from "../components/SpacedCheckbox";
 import { FormGroup, FormControlLabel, useMediaQuery } from "@material-ui/core";
-import { ComparisonActionType, ComparisonContext } from "../comparison/ComparisonContext";
+import { ComparisonActionType, ComparisonContext } from "./comparison/ComparisonContext";
 import { useTranslation } from "react-i18next";
-import { formatCip } from "../utils/formatCip";
+import { formatCip } from "./utils/formatCip";
 
 interface Props {
   trainingResult: TrainingResult;

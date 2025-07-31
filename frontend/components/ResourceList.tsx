@@ -4,7 +4,7 @@ import {
   ResourceCategoryPageProps,
   ResourceItemProps,
   TagProps,
-} from "../types/contentful";
+} from "../lib/types/contentful";
 import { FilterControls } from "./FilterControls";
 import { ResourceCard } from "./ResourceCard";
 import { ResourceListHeading } from "./modules/ResourceListHeading";

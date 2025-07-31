@@ -1,5 +1,5 @@
-import { TrainingResult } from "../domain/Training";
-import { Filter, FilterableElement } from "../domain/Filter";
+import { TrainingResult } from "./domain/Training";
+import { Filter, FilterableElement } from "./domain/Filter";
 import { fireEvent, render, RenderResult, screen } from "@testing-library/react";
 import { FilterContext } from "./FilterContext";
 import { FilterBox } from "./FilterBox";

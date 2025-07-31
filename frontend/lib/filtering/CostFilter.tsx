@@ -1,10 +1,10 @@
 import { Input } from "../components/Input";
 import React, { ChangeEvent, ReactElement, useContext, useEffect, useState } from "react";
 import { FilterActionType, FilterContext } from "./FilterContext";
-import { FilterableElement } from "../domain/Filter";
-import { TrainingResult } from "../domain/Training";
+import { FilterableElement } from "./domain/Filter";
+import { TrainingResult } from "./domain/Training";
 import { useTranslation } from "react-i18next";
-import { updateUrlParams } from "../utils/updateUrlParams";
+import { updateUrlParams } from "./utils/updateUrlParams";
 
 const INPUT_PROPS = {
   style: {

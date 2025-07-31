@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { DropGroup } from "./modules/DropGroup";
-import { FaqTopic } from "../types/contentful";
+import { FaqTopic } from "../lib/types/contentful";
 
 interface DropNavProps {
   className?: string;

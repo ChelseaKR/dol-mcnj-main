@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { OccupationNodeProps, CareerMapProps, SinglePathwayProps } from "../types/contentful";
+import { OccupationNodeProps, CareerMapProps, SinglePathwayProps } from "../lib/types/contentful";
 import { PathwayGroup } from "./PathwayGroup";
-import { Client } from "../domain/Client";
+import { Client } from "../lib/domain/Client";
 import { CareerDetail } from "./CareerDetail";
 import { Path } from "@phosphor-icons/react";
 import { Heading } from "./modules/Heading";

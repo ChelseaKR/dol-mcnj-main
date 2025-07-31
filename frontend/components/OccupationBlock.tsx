@@ -11,17 +11,17 @@ import {
   RocketLaunch,
   Warning,
 } from "@phosphor-icons/react";
-import { OccupationDetail } from "../domain/Occupation";
-import { toUsCurrency } from "../utils/toUsCurrency";
+import { OccupationDetail } from "../lib/domain/Occupation";
+import { toUsCurrency } from "../lib/utils/toUsCurrency";
 import { ReactNode, useEffect, useState } from "react";
-import { Error } from "../domain/Error";
+import { Error } from "../lib/domain/Error";
 import { useTranslation } from "react-i18next";
 import { CircularProgress } from "@material-ui/core";
-import { numberWithCommas } from "../utils/numberWithCommas";
-import { TrainingResult } from "../domain/Training";
-import { calendarLength } from "../utils/calendarLength";
+import { numberWithCommas } from "../lib/utils/numberWithCommas";
+import { TrainingResult } from "../lib/domain/Training";
+import { calendarLength } from "../lib/utils/calendarLength";
 import { InDemandTag } from "./InDemandTag";
-import { Selector } from "../svg/Selector";
+import { Selector } from "../public/svg/Selector";
 import { Heading } from "./modules/Heading";
 
 interface OccupationBlockProps {

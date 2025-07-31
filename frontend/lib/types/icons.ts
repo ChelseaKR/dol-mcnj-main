@@ -1,4 +1,4 @@
-import * as Svg from "../svg/Icons";
+import * as Svg from "/svg/Icons";
 
 export enum IconNames {
   AddressBook = "AddressBook",

@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 
-import { LinkObjectProps } from "../types/contentful";
+import { LinkObjectProps } from "../lib/types/contentful";
 
 export const ResourceLinks = ({
   heading,

@@ -1,23 +1,23 @@
 import { ReactElement, useEffect, useState } from "react";
 import { Link, RouteComponentProps } from "@reach/router";
-import { Client } from "../domain/Client";
-import { Occupation, OccupationDetail } from "../domain/Occupation";
+import { Client } from "./domain/Client";
+import { Occupation, OccupationDetail } from "./domain/Occupation";
 import { Grouping } from "../components/Grouping";
 import { InlineIcon } from "../components/InlineIcon";
-import { Error } from "../domain/Error";
+import { Error } from "./domain/Error";
 import { SomethingWentWrongPage } from "../error/SomethingWentWrongPage";
 import { NotFoundPage } from "../error/NotFoundPage";
 import { StatBlock } from "../components/StatBlock";
 import { formatMoney } from "accounting";
 import careeronestop from "../careeronestop.png";
 import { TrainingResultCard } from "../search-results/TrainingResultCard";
-import { TrainingResult } from "../domain/Training";
+import { TrainingResult } from "./domain/Training";
 import { CircularProgress, Icon } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import { logEvent } from "../analytics";
+import { logEvent } from "./analytics";
 import { Layout } from "../components/Layout";
 import { InDemandBlock } from "../components/InDemandBlock";
-import { usePageTitle } from "../utils/usePageTitle";
+import { usePageTitle } from "./utils/usePageTitle";
 import { Helmet } from "react-helmet-async";
 
 interface Props extends RouteComponentProps {
@@ -141,8 +141,8 @@ export const OccupationPage = (props: Props): ReactElement => {
 
   usePageTitle(
     occupationDetail
-      ? `${occupationDetail.title} | Occupation | ${process.env.REACT_APP_SITE_NAME}`
-      : `Occupation | ${process.env.REACT_APP_SITE_NAME}`,
+      ? `${occupationDetail.title} | Occupation | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `Occupation | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
   );
 
   const generateJsonLd = (detail: OccupationDetail) => {
@@ -175,8 +175,8 @@ export const OccupationPage = (props: Props): ReactElement => {
         client={props.client}
         seo={{
           title: occupationDetail.title
-            ? `${occupationDetail.title} | Occupation | ${process.env.REACT_APP_SITE_NAME}`
-            : `Occupation | ${process.env.REACT_APP_SITE_NAME}`,
+            ? `${occupationDetail.title} | Occupation | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+            : `Occupation | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
           pageDescription: occupationDetail.description,
           url: props.location?.pathname || "/occupation",
         }}
@@ -414,7 +414,7 @@ export const OccupationPage = (props: Props): ReactElement => {
         noFooter
         client={props.client}
         seo={{
-          title: `Occupation | ${process.env.REACT_APP_SITE_NAME}`,
+          title: `Occupation | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
           url: props.location?.pathname,
         }}
       >

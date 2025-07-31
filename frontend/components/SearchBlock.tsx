@@ -1,9 +1,9 @@
 import { CurrencyDollarSimple, Info, X } from "@phosphor-icons/react";
 import { ChangeEvent, useEffect, useState } from "react";
 import DOMPurify from "dompurify";
-import { checkValidZipCode } from "../utils/checkValidZipCode";
+import { checkValidZipCode } from "../lib/utils/checkValidZipCode";
 import { InlineIcon } from "./InlineIcon";
-import { ContentfulRichText } from "../types/contentful";
+import { ContentfulRichText } from "../lib/types/contentful";
 import { ContentfulRichText as RichText } from "./ContentfulRichText";
 import { CipDrawerContent } from "./CipDrawerContent";
 import { Tooltip } from "react-tooltip";

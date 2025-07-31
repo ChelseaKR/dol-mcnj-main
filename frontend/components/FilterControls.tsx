@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { TagProps } from "../types/contentful";
+import { TagProps } from "../lib/types/contentful";
 import { LabelBox } from "./modules/LabelBox";
 import { Heading } from "./modules/Heading";
 import { CaretRight, MagnifyingGlass } from "@phosphor-icons/react";
-import { slugify } from "../utils/slugify";
+import { slugify } from "../lib/utils/slugify";
 
 interface FilterControlsProps {
   boxLabel: string;

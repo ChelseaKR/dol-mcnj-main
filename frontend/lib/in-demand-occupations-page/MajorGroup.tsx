@@ -1,5 +1,5 @@
 import React, { ReactElement, useState } from "react";
-import { InDemandOccupation } from "../domain/Occupation";
+import { InDemandOccupation } from "./domain/Occupation";
 import { Icon } from "@material-ui/core";
 import { Link } from "@reach/router";
 

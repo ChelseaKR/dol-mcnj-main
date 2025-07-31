@@ -1,4 +1,4 @@
-import { FinResourceItemProps } from "../types/contentful";
+import { FinResourceItemProps } from "../lib/types/contentful";
 import { ContentfulRichText } from "./ContentfulRichText";
 import { LinkObject } from "./modules/LinkObject";
 

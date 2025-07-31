@@ -1,5 +1,5 @@
-import { TagProps } from "../types/contentful";
-import { parseMarkdownToHTML } from "../utils/parseMarkdownToHTML";
+import { TagProps } from "../lib/types/contentful";
+import { parseMarkdownToHTML } from "../lib/utils/parseMarkdownToHTML";
 import { Tag } from "./modules/Tag";
 
 interface ResourceCardProps {

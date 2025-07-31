@@ -67,12 +67,12 @@ export const AllSupportPage = (props: Props): ReactElement => {
     filteredCategories.push(otherAssistance);
   }
 
-  usePageTitle(`${data?.page.title} | ${process.env.REACT_APP_SITE_NAME}`);
+  usePageTitle(`${data?.page.title} | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
 
   const seoObject = {
     title: data
-      ? `${data?.page.title} | ${process.env.REACT_APP_SITE_NAME}`
-      : `Support and Assistance Resources | ${process.env.REACT_APP_SITE_NAME}`,
+      ? `${data?.page.title} | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `Support and Assistance Resources | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
     pageDescription:
       data?.page.pageDescription || "Browse support and assistance resources by category.",
     image: data?.page.ogImage?.url || pageImage,

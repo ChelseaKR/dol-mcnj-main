@@ -1,9 +1,9 @@
 import { RouteComponentProps } from "@reach/router";
-import { Client } from "../domain/Client";
+import { Client } from "./domain/Client";
 import { Layout } from "../components/Layout";
 import { Helmet } from "react-helmet-async";
 import { ReactElement } from "react";
-import { parseMarkdownToHTML } from "../utils/parseMarkdownToHTML";
+import { parseMarkdownToHTML } from "./utils/parseMarkdownToHTML";
 import { useTranslation } from "react-i18next";
 
 interface Props extends RouteComponentProps {

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { IntroBlockSectionProps, IntroBlocksProps } from "../types/contentful";
-import { IconNames } from "../types/icons";
+import { IntroBlockSectionProps, IntroBlocksProps } from "../lib/types/contentful";
+import { IconNames } from "../lib/types/icons";
 import { Button } from "./modules/Button";
 
 interface ActiveSectionProps extends IntroBlockSectionProps {
@@ -14,14 +14,14 @@ const IntroBlocks = ({ heading, message, sectionsHeading, sections }: IntroBlock
 
   // TODO: Remove after both features are live
 
-  if (process.env.REACT_APP_FEATURE_CAREER_PATHWAYS === "false" && sections) {
+  if (process.env.NEXT_PUBLIC_FEATURE_CAREER_PATHWAYS === "false" && sections) {
     const index = sections.findIndex((item) => item.title === "Career Pathways");
     if (index !== -1) {
       sections.splice(index, 1);
     }
   }
 
-  if (process.env.REACT_APP_FEATURE_CAREER_NAVIGATOR === "false" && sections) {
+  if (process.env.NEXT_PUBLIC_FEATURE_CAREER_NAVIGATOR === "false" && sections) {
     const index = sections.findIndex((item) => item.title === "Career Navigator");
     if (index !== -1) {
       sections.splice(index, 1);

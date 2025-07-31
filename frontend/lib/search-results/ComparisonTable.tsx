@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
 import { useMediaQuery } from "@material-ui/core";
-import { TrainingResult } from "../domain/Training";
+import { TrainingResult } from "./domain/Training";
 import { formatMoney } from "accounting";
-import { formatPercentEmployed } from "../presenters/formatPercentEmployed";
+import { formatPercentEmployed } from "./presenters/formatPercentEmployed";
 import { InDemandTag } from "../components/InDemandTag";
 import { Button } from "../components/Button";
 import { navigate } from "@reach/router";

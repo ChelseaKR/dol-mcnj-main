@@ -1,20 +1,20 @@
 import { RouteComponentProps } from "@reach/router";
 import { ReactElement } from "react";
 import { Layout } from "../components/Layout";
-import { Client } from "../domain/Client";
-import { TrainingExplorerPageProps } from "../types/contentful";
+import { Client } from "./domain/Client";
+import { TrainingExplorerPageProps } from "./types/contentful";
 import { HowTo } from "../components/HowTo";
 // import { Accordion } from "../components/Accordion";
 import { Interrupter } from "../components/Interrupter";
 import { CtaBanner } from "../components/CtaBanner";
-// import { IconNames } from "../types/icons";
+// import { IconNames } from "./types/icons";
 // import { SectionHeading } from "../components/modules/SectionHeading";
-import { useContentful } from "../utils/useContentful";
+import { useContentful } from "./utils/useContentful";
 import { useTranslation } from "react-i18next";
-import pageImage from "../images/ogImages/trainingExplorer.jpg";
+import pageImage from "/images/ogImages/trainingExplorer.jpg";
 import { TrainingExplorerHeading } from "../components/TrainingExplorerHeading";
 import { HeroBanner } from "../components/HeroBanner";
-import trainingImage from "../images/training.png";
+import trainingImage from "/images/training.png";
 
 interface Props extends RouteComponentProps {
   client: Client;
@@ -57,8 +57,8 @@ export const TrainingExplorerPage = (props: Props): ReactElement => {
 
   const seoObject = {
     title: pageData?.title
-      ? `${pageData?.title} | ${process.env.REACT_APP_SITE_NAME}`
-      : `New Jersey Training Explorer | ${process.env.REACT_APP_SITE_NAME}`,
+      ? `${pageData?.title} | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `New Jersey Training Explorer | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
     description:
       pageData?.pageDescription ||
       "Certifications, Professional Development, Apprenticeships & More!",

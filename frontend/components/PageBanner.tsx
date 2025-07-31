@@ -1,4 +1,4 @@
-import { PageBannerProps } from "../types/contentful";
+import { PageBannerProps } from "../lib/types/contentful";
 import { ContentfulRichText } from "./ContentfulRichText";
 import { Icon } from "@material-ui/core";
 

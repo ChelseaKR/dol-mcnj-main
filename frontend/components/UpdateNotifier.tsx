@@ -6,7 +6,7 @@ import {
   X,
 } from "@phosphor-icons/react";
 import React, { useEffect, useState } from "react";
-import { checkValidEmail } from "../utils/checkValidEmail";
+import { checkValidEmail } from "../lib/utils/checkValidEmail";
 interface UpdateNotifierProps {
   className?: string;
   isDrawer?: boolean;
@@ -44,7 +44,7 @@ const Content = ({
   const [openDropdown, setOpenDropdown] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [activeDescription, setActiveDescription] = useState("Select an option");
-  const showDropdown = process.env.REACT_APP_FEATURE_SHOW_PINPOINT_SEGMENTS === 'true';
+  const showDropdown = process.env.NEXT_PUBLIC_FEATURE_SHOW_PINPOINT_SEGMENTS === 'true';
 
   useEffect(() => {
     // if click happens outside of dropdown '.dropdown-select', close dropdown
@@ -132,7 +132,7 @@ const Content = ({
                   <MegaphoneSimple size={48} />
                   <p className="heading-tag">Success!</p>
                   <p className="status-message">
-                    If this is the first time you've subscribed to {process.env.REACT_APP_SITE_NAME}, you'll see
+                    If this is the first time you've subscribed to {process.env.NEXT_PUBLIC_SITE_NAME}, you'll see
                     a confirmation email in your inbox to confirm your subscription. If you don't see
                     that email, be sure to check your spam and junk folders.
                   </p>
@@ -184,7 +184,7 @@ const Content = ({
                   <div className="heading-wrap">
                     <MegaphoneSimple size={48} />
                     <p className="heading-tag">
-                      Want updates on new tools and features from {process.env.REACT_APP_SITE_NAME}?
+                      Want updates on new tools and features from {process.env.NEXT_PUBLIC_SITE_NAME}?
                     </p>
                   </div>
                   <form className="usa-form" onSubmit={handleSubmit}>

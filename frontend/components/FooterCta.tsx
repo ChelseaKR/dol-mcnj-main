@@ -1,4 +1,4 @@
-import { HeadingLevel, LinkObjectProps } from "../types/contentful";
+import { HeadingLevel, LinkObjectProps } from "../lib/types/contentful";
 import { Heading } from "./modules/Heading";
 
 export const FooterCta = ({

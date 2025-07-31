@@ -1,25 +1,25 @@
 import { ChangeEvent, ReactElement, useContext, useEffect, useState } from "react";
 import { WindowLocation } from "@reach/router";
-import { Client } from "../domain/Client";
-import { TrainingResult } from "../domain/Training";
+import { Client } from "./domain/Client";
+import { TrainingResult } from "./domain/Training";
 import { RouteComponentProps, Link } from "@reach/router";
 import { TrainingResultCard } from "./TrainingResultCard";
 import { CircularProgress, FormControl, InputLabel, useMediaQuery, Icon } from "@material-ui/core";
-import { FilterBox } from "../filtering/FilterBox";
+import { FilterBox } from "./filtering/FilterBox";
 import { SomethingWentWrongPage } from "../error/SomethingWentWrongPage";
 import { WhiteSelect } from "../components/WhiteSelect";
-import { SortOrder } from "../sorting/SortOrder";
-import { SortContext } from "../sorting/SortContext";
-import { FilterContext } from "../filtering/FilterContext";
+import { SortOrder } from "./sorting/SortOrder";
+import { SortContext } from "./sorting/SortContext";
+import { FilterContext } from "./filtering/FilterContext";
 import { TrainingComparison } from "./TrainingComparison";
-import { ComparisonContext } from "../comparison/ComparisonContext";
+import { ComparisonContext } from "./comparison/ComparisonContext";
 import { useTranslation } from "react-i18next";
-import { logEvent } from "../analytics";
+import { logEvent } from "./analytics";
 import { Layout } from "../components/Layout";
-import { usePageTitle } from "../utils/usePageTitle";
+import { usePageTitle } from "./utils/usePageTitle";
 import { ArrowLeft } from "@phosphor-icons/react";
-import { checkValidSocCode } from "../utils/checkValidCodes";
-import pageImage from "../images/ogImages/searchResults.png";
+import { checkValidSocCode } from "./utils/checkValidCodes";
+import pageImage from "/images/ogImages/searchResults.png";
 import { Helmet } from "react-helmet-async";
 
 interface Props extends RouteComponentProps {
@@ -40,7 +40,7 @@ export const SearchResultsPage = (props: Props): ReactElement<Props> => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
   const [pageTitle, setPageTitle] = useState<string>(
-    `Advanced Search | Training Explorer | ${process.env.REACT_APP_SITE_NAME}`,
+    `Advanced Search | Training Explorer | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
   );
 
   const filterState = useContext(FilterContext).state;
@@ -92,11 +92,11 @@ export const SearchResultsPage = (props: Props): ReactElement<Props> => {
 
   const getPageTitle = (): void => {
     if (!searchQuery || searchQuery === "null") {
-      setPageTitle(`Advanced Search | Training Explorer | ${process.env.REACT_APP_SITE_NAME}`);
+      setPageTitle(`Advanced Search | Training Explorer | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
     } else {
       const query = decodeURIComponent(searchQuery.replace(/\+/g, " ")).toLocaleLowerCase();
       setPageTitle(
-        `${query} | Advanced Search | Training Explorer | ${process.env.REACT_APP_SITE_NAME}`,
+        `${query} | Advanced Search | Training Explorer | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
       );
     }
   };
@@ -223,7 +223,7 @@ export const SearchResultsPage = (props: Props): ReactElement<Props> => {
       noFooter
       client={props.client}
       seo={{
-        title: pageTitle || `Search | Training Explorer | ${process.env.REACT_APP_SITE_NAME}`,
+        title: pageTitle || `Search | Training Explorer | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
         url: props.location?.pathname || "/training/search",
         image: pageImage,
       }}

@@ -12,7 +12,7 @@ interface Props extends RouteComponentProps {
 }
 
 const seoObject = {
-  title: `Tools | ${process.env.REACT_APP_SITE_NAME}`,
+  title: `Tools | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
   description: "Certifications, Prage?.url ofessional Development, Apprenticeships & More!",
   image: pageImage,
   url: "/tools",

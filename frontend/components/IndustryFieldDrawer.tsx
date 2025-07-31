@@ -1,7 +1,7 @@
 import { Info, X } from "@phosphor-icons/react";
-import { PathwayGroupProps } from "../types/contentful";
+import { PathwayGroupProps } from "../lib/types/contentful";
 import { useEffect, useState } from "react";
-import { slugify } from "../utils/slugify";
+import { slugify } from "../lib/utils/slugify";
 
 export const IndustryFieldDrawer = ({
   title,

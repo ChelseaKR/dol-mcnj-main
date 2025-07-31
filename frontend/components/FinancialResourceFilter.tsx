@@ -1,5 +1,5 @@
 import { Icon } from "@material-ui/core";
-import { FinResourceTypeProps } from "../types/contentful";
+import { FinResourceTypeProps } from "../lib/types/contentful";
 import { useState } from "react";
 
 export const FinancialResourceFilter = ({

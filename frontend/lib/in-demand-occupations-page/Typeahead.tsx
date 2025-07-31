@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 
 import React, { ChangeEvent, ReactElement } from "react";
-import { InDemandOccupation } from "../domain/Occupation";
+import { InDemandOccupation } from "./domain/Occupation";
 import { createStyles, Icon, InputAdornment, TextField } from "@material-ui/core";
 import { Autocomplete, AutocompleteChangeReason } from "@material-ui/lab";
 import { navigate } from "@reach/router";

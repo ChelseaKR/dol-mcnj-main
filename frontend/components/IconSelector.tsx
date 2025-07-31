@@ -1,6 +1,6 @@
 import * as Icon from "@phosphor-icons/react";
-import * as Svg from "../svg/Icons";
-import { IconNames } from "../types/icons";
+import * as Svg from "../public/svg/Icons";
+import { IconNames } from "../lib/types/icons";
 
 export interface IconSelectorProps {
   size?: number;

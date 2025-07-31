@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { IconSelector } from "./IconSelector";
-import { parseMarkdownToHTMLWithLinksInNewTab } from "../utils/parseMarkdownToHTML";
+import { parseMarkdownToHTMLWithLinksInNewTab } from "../lib/utils/parseMarkdownToHTML";
 
 export const AlertBar = ({
   heading,

@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { useTranslation } from "react-i18next";
 import { ErrorPage } from "./ErrorPage";
-import { Client } from "../domain/Client";
+import { Client } from "./domain/Client";
 
 interface Props {
   client: Client;

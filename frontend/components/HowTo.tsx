@@ -1,5 +1,5 @@
 import { YoutubeLogo } from "@phosphor-icons/react";
-import { IconNames } from "../types/icons";
+import { IconNames } from "../lib/types/icons";
 import { Stepper } from "./Stepper";
 import { SectionHeading } from "./modules/SectionHeading";
 

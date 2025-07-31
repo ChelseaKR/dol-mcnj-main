@@ -1,13 +1,13 @@
 import { RouteComponentProps } from "@reach/router";
 import { ReactElement } from "react";
 import { Layout } from "../components/Layout";
-import { Client } from "../domain/Client";
-import { useContentful } from "../utils/useContentful";
-import { HomepageProps } from "../types/contentful";
+import { Client } from "./domain/Client";
+import { useContentful } from "./utils/useContentful";
+import { HomepageProps } from "./types/contentful";
 import { HomeBanner } from "./components/HomeBanner";
 
-import { usePageTitle } from "../utils/usePageTitle";
-import pageImage from "../images/ogImages/homePage.jpg";
+import { usePageTitle } from "./utils/usePageTitle";
+import pageImage from "/images/ogImages/homePage.jpg";
 import { useTranslation } from "react-i18next";
 import { content } from "./content";
 import { CardProps } from "../components/Card";
@@ -29,7 +29,7 @@ export const LandingPage = (props: Props): ReactElement => {
   usePageTitle(pageData?.title);
 
   const seoObject = {
-    title: pageData?.title || (process.env.REACT_APP_SITE_NAME as string),
+    title: pageData?.title || (process.env.NEXT_PUBLIC_SITE_NAME as string),
     pageDescription:
       "Explore My Career NJ to find job training, career resources, and employment opportunities with the New Jersey Department of Labor.",
     image: pageData?.ogImage?.url || pageImage,

@@ -1,20 +1,17 @@
 import React from "react";
 import { GetServerSideProps } from "next";
-import { LandingPage } from "../lib/landing-page/LandingPage";
-import { ApiClient } from "../lib/ApiClient";
 
-interface Props {
-  // Add any props that might be needed for SSR
-}
-
-export default function Home(props: Props) {
-  const apiClient = new ApiClient();
-  
-  return <LandingPage client={apiClient} />;
+export default function Home() {  
+  return (
+    <div>
+      <h1>My Career NJ - Next.js Migration</h1>
+      <p>This is the migrated Next.js version of the application.</p>
+      <p>More features will be added incrementally.</p>
+    </div>
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  // Add any server-side data fetching if needed
   return {
     props: {},
   };

@@ -1,4 +1,4 @@
-import { IconLinkProps } from "../types/contentful";
+import { IconLinkProps } from "../lib/types/contentful";
 import { IconCard } from "./IconCard";
 import { SectionHeading } from "./modules/SectionHeading";
 

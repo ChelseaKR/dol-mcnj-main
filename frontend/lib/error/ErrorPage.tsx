@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
 import { Icon } from "@material-ui/core";
 import { Layout } from "../components/Layout";
-import { Client } from "../domain/Client";
-import { usePageTitle } from "../utils/usePageTitle";
+import { Client } from "./domain/Client";
+import { usePageTitle } from "./utils/usePageTitle";
 import { Helmet } from "react-helmet-async";
 
 interface Props {
@@ -39,14 +39,14 @@ export const ErrorBlock = ({
 );
 
 export const ErrorPage = (props: Props): ReactElement => {
-  usePageTitle(`Error | ${process.env.REACT_APP_SITE_NAME}`);
+  usePageTitle(`Error | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
 
   return (
     <Layout
       noFooter
       client={props.client}
       seo={{
-        title: `${process.env.REACT_APP_SITE_NAME}`,
+        title: `${process.env.NEXT_PUBLIC_SITE_NAME}`,
       }}
     >
       <Helmet>

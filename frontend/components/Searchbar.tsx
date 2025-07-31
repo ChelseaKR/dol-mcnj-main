@@ -1,7 +1,7 @@
 import React, { ChangeEvent, ReactElement, useEffect, useState, useContext } from "react";
 import { InputAdornment, Icon } from "@material-ui/core";
 import { Input } from "./Input";
-import { FilterActionType, FilterContext } from "../filtering/FilterContext";
+import { FilterActionType, FilterContext } from "../lib/filtering/FilterContext";
 import { Button } from "./Button";
 import { useTranslation } from "react-i18next";
 interface Props {

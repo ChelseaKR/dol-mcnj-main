@@ -1,15 +1,15 @@
 import { Input } from "../components/Input";
 import React, { ChangeEvent, ReactElement, useContext, useEffect, useState } from "react";
 import { FilterActionType, FilterContext } from "./FilterContext";
-import { FilterableElement } from "../domain/Filter";
-import { TrainingResult } from "../domain/Training";
+import { FilterableElement } from "./domain/Filter";
+import { TrainingResult } from "./domain/Training";
 import { InlineIcon } from "../components/InlineIcon";
 import { FormControl, InputLabel } from "@material-ui/core";
 import { WhiteSelect } from "../components/WhiteSelect";
 import { getZipCodesInRadius } from "./findZipCodesInRadius";
 import { useTranslation } from "react-i18next";
-import { checkValidZipCode } from "../utils/checkValidZipCode";
-import { updateUrlParams } from "../utils/updateUrlParams";
+import { checkValidZipCode } from "./utils/checkValidZipCode";
+import { updateUrlParams } from "./utils/updateUrlParams";
 export interface SearchArea {
   center: string;
   radius: number;

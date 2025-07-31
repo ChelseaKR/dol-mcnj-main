@@ -3,8 +3,8 @@ import { content } from "../career-pathways-page/content";
 import { Heading } from "./modules/Heading";
 import { LinkObject } from "./modules/LinkObject";
 import { useEffect, useState } from "react";
-import { Selector, SelectorProps } from "../svg/Selector";
-import { parseMarkdownToHTML } from "../utils/parseMarkdownToHTML";
+import { Selector, SelectorProps } from "../public/svg/Selector";
+import { parseMarkdownToHTML } from "../lib/utils/parseMarkdownToHTML";
 
 const Panel = ({
   open,

@@ -1,12 +1,12 @@
 import { ReactElement } from "react";
 import { RouteComponentProps } from "@reach/router";
-import { Client } from "../domain/Client";
-import { TrainingProviderData } from "../types/contentful";
+import { Client } from "./domain/Client";
+import { TrainingProviderData } from "./types/contentful";
 import { Layout } from "../components/Layout";
 import { TabContent } from "../components/TabContent";
-import { usePageTitle } from "../utils/usePageTitle";
-import { useContentful } from "../utils/useContentful";
-import pageImage from "../images/ogImages/trainingProviderResources.jpg";
+import { usePageTitle } from "./utils/usePageTitle";
+import { useContentful } from "./utils/useContentful";
+import pageImage from "/images/ogImages/trainingProviderResources.jpg";
 import { HeroBanner } from "../components/HeroBanner";
 import { useTranslation } from "react-i18next";
 
@@ -20,12 +20,12 @@ export const TrainingProviderPage = (props: Props): ReactElement<Props> => {
     path: "/training-provider",
   });
 
-  usePageTitle(`${data?.page?.title} | ${process.env.REACT_APP_SITE_NAME}`);
+  usePageTitle(`${data?.page?.title} | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
 
   const seoObject = {
     title: data
-      ? `${data?.page?.title} | ${process.env.REACT_APP_SITE_NAME}`
-      : `Training Provider | ${process.env.REACT_APP_SITE_NAME}`,
+      ? `${data?.page?.title} | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `Training Provider | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
     pageDescription:
       data?.page?.pageDescription ||
       "As a training program provider, you may have questions about data collection requirements, Eligible Training Provider List (ETPL) listing, and how the Department of Labor deals with Quality Assurance. You can find answers to your questions here.",

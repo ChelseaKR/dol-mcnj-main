@@ -1,10 +1,10 @@
 import React, { ChangeEvent, ReactElement, useContext, useEffect, useState } from "react";
 import { FilterActionType, FilterContext } from "./FilterContext";
-import { FilterableElement } from "../domain/Filter";
-import { TrainingResult } from "../domain/Training";
+import { FilterableElement } from "./domain/Filter";
+import { TrainingResult } from "./domain/Training";
 import { FormControlLabel, Switch } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import { toggleParams } from "../utils/updateUrlParams";
+import { toggleParams } from "./utils/updateUrlParams";
 
 export const InDemandOnlyFilter = (): ReactElement => {
   const { t } = useTranslation();

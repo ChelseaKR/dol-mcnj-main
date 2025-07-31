@@ -1,8 +1,8 @@
 import { ReactNode, useEffect, useState } from "react";
 import { useLocation } from "@reach/router";
-import { FaqTopic } from "../types/contentful";
+import { FaqTopic } from "../lib/types/contentful";
 import { Accordion } from "./Accordion";
-import { slugify } from "../utils/slugify";
+import { slugify } from "../lib/utils/slugify";
 import { DropNav } from "./DropNav";
 
 export const FaqCollection = ({

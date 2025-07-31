@@ -1,13 +1,13 @@
 import React, { ReactElement, useState, useContext } from "react";
-import { TrainingResult } from "../domain/Training";
+import { TrainingResult } from "./domain/Training";
 import { useMediaQuery } from "@material-ui/core";
 import { Icon } from "@material-ui/core";
 import { ComparisonTable } from "./ComparisonTable";
-import { ComparisonActionType, ComparisonContext } from "../comparison/ComparisonContext";
+import { ComparisonActionType, ComparisonContext } from "./comparison/ComparisonContext";
 import { UnstyledButton } from "../components/UnstyledButton";
 import { Button } from "../components/Button";
 import { useTranslation } from "react-i18next";
-import { logEvent } from "../analytics";
+import { logEvent } from "./analytics";
 
 interface Props {
   className?: string;

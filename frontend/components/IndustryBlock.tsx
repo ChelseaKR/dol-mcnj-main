@@ -1,7 +1,7 @@
 import { Fire, Info, Star, X } from "@phosphor-icons/react";
-import { IndustryProps } from "../types/contentful";
+import { IndustryProps } from "../lib/types/contentful";
 import { ContentfulRichText } from "./ContentfulRichText";
-import { Selector } from "../svg/Selector";
+import { Selector } from "../public/svg/Selector";
 import { Accordion } from "./Accordion";
 import { useEffect, useState } from "react";
 

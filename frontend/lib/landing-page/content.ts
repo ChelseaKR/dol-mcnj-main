@@ -1,6 +1,6 @@
-import Robotics from "../images/Robotics.png";
-import Scientist from "../images/Scientist.png";
-import Welder from "../images/Welder.png";
+import Robotics from "/images/Robotics.png";
+import Scientist from "/images/Scientist.png";
+import Welder from "/images/Welder.png";
 
 export const content = {
   banner: {

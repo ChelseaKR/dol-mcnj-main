@@ -1,5 +1,5 @@
 import { IconSelector } from "./IconSelector";
-import { IconCardProps, IconNames } from "../types/icons";
+import { IconCardProps, IconNames } from "../lib/types/icons";
 
 const CardContent = ({
   centered,

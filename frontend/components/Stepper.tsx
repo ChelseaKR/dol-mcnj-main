@@ -1,5 +1,5 @@
-import { IconNames } from "../types/icons";
-import { parseMarkdownToHTML } from "../utils/parseMarkdownToHTML";
+import { IconNames } from "../lib/types/icons";
+import { parseMarkdownToHTML } from "../lib/utils/parseMarkdownToHTML";
 import { PhosphorIconSelector } from "./modules/PhosphorIconSelector";
 
 export const Stepper = ({

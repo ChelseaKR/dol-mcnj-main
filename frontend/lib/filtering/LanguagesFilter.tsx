@@ -2,14 +2,14 @@ import React, { ChangeEvent, ReactElement, useContext, useEffect, useState } fro
 import { FormControlLabel, FormGroup } from "@material-ui/core";
 import { SpacedCheckbox } from "../components/SpacedCheckbox";
 import { FilterActionType, FilterContext } from "./FilterContext";
-import { FilterableElement } from "../domain/Filter";
-import { TrainingResult } from "../domain/Training";
+import { FilterableElement } from "./domain/Filter";
+import { TrainingResult } from "./domain/Training";
 import { UnstyledLinkButton } from "../components/UnstyledLinkButton";
 import { InlineIcon } from "../components/InlineIcon";
 import { ALL_LANGUAGES, DATA_VALUE_TO_LANGUAGE } from "./trainingLanguages";
 import { useTranslation } from "react-i18next";
-import { toggleParams } from "../utils/updateUrlParams";
-import { camelify } from "../utils/slugify";
+import { toggleParams } from "./utils/updateUrlParams";
+import { camelify } from "./utils/slugify";
 
 const COLLAPSED_LIST_LENGTH = 4;
 

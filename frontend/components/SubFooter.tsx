@@ -1,10 +1,10 @@
-import opra from "../images/opra.png";
-import myNJ from "../images/myNJ.png";
-import njoit from "../images/njoit.png";
-import { Facebook } from "../svg/Facebook";
-import { Twitter } from "../svg/Twitter";
-import { YouTube } from "../svg/Youtube";
-import { LinkedIn } from "../svg/LinkedIn";
+import opra from "../public/images/opra.png";
+import myNJ from "../public/images/myNJ.png";
+import njoit from "../public/images/njoit.png";
+import { Facebook } from "../public/svg/Facebook";
+import { Twitter } from "../public/svg/Twitter";
+import { YouTube } from "../public/svg/Youtube";
+import { LinkedIn } from "../public/svg/LinkedIn";
 
 export const SubFooter = () => {
   const year = new Date().getFullYear();

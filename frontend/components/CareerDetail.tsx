@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { JobCountProps, OccupationNodeProps, SelectProps } from "../types/contentful";
+import { JobCountProps, OccupationNodeProps, SelectProps } from "../lib/types/contentful";
 import {
   ArrowsInSimple,
   ArrowsOutSimple,
@@ -8,17 +8,17 @@ import {
   Info,
   RocketLaunch,
 } from "@phosphor-icons/react";
-import { Client } from "../domain/Client";
+import { Client } from "../lib/domain/Client";
 import { OccupationCopyColumn } from "./modules/OccupationCopyColumn";
 import { RelatedTrainingSearch } from "./modules/RelatedTrainingSearch";
-import { groupObjectsByLevel } from "../utils/groupObjectsByLevel";
+import { groupObjectsByLevel } from "../lib/utils/groupObjectsByLevel";
 import { SinglePath } from "./SinglePath";
-import { toUsCurrency } from "../utils/toUsCurrency";
-import { numberWithCommas } from "../utils/numberWithCommas";
-import { Selector } from "../svg/Selector";
+import { toUsCurrency } from "../lib/utils/toUsCurrency";
+import { numberWithCommas } from "../lib/utils/numberWithCommas";
+import { Selector } from "../public/svg/Selector";
 import { InDemandTag } from "./InDemandTag";
 import { CircularProgress } from "@material-ui/core";
-import { parseMarkdownToHTML } from "../utils/parseMarkdownToHTML";
+import { parseMarkdownToHTML } from "../lib/utils/parseMarkdownToHTML";
 
 interface OccupationDataProps {
   careerMapObject: OccupationNodeProps;

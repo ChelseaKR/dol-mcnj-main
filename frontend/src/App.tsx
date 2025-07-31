@@ -96,7 +96,7 @@ interface Props {
 }
 
 Sentry.init({
-  dsn: process.env.REACT_APP_SENTRY_DSN,
+  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
   integrations: [
     new Sentry.BrowserTracing({
       tracePropagationTargets: ["localhost", /^https:\/\/yourserver\.io\/api/],
@@ -199,18 +199,18 @@ export const App = (props: Props): ReactElement => {
                 />
                 <Redirect from="/etpl" to="/faq#etpl-program-general-information" />
 
-                {process.env.REACT_APP_FEATURE_CAREER_NAVIGATOR === "true" && (
+                {process.env.NEXT_PUBLIC_FEATURE_CAREER_NAVIGATOR === "true" && (
                   <Redirect from="/career-navigator" to="/navigator" />
                 )}
-                {process.env.REACT_APP_FEATURE_CAREER_PATHWAYS === "true" && (
+                {process.env.NEXT_PUBLIC_FEATURE_CAREER_PATHWAYS === "true" && (
                   <CareerPathwaysPage path="/career-pathways" client={props.client} />
                 )}
-                {process.env.REACT_APP_FEATURE_CAREER_PATHWAYS === "true" && (
+                {process.env.NEXT_PUBLIC_FEATURE_CAREER_PATHWAYS === "true" && (
                   <IndustryPage path="/career-pathways/:slug" client={props.client} />
                 )}
               </Router>
             </Suspense>
-            {process.env.REACT_APP_FEATURE_MULTILANG === "true" && <LanguageSwitchButton />}
+            {process.env.NEXT_PUBLIC_FEATURE_MULTILANG === "true" && <LanguageSwitchButton />}
             <ContextualInfoPanel />
           </ContextualInfoContext.Provider>
         </FilterContext.Provider>

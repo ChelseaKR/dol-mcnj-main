@@ -1,7 +1,7 @@
 import { Document } from "@contentful/rich-text-types";
 import { ReactNode } from "react";
 import { IconNames } from "./icons";
-import * as Svg from "../svg/Icons";
+import * as Svg from "/svg/Icons";
 
 export type ThemeColors = "navy" | "blue" | "green" | "purple" | "orange";
 

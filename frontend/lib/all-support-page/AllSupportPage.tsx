@@ -1,6 +1,5 @@
-import { RouteComponentProps } from "@reach/router";
 import { ReactElement, useEffect, useState } from "react";
-import { Layout } from "../components/Layout";
+import { Layout } from "../../components/Layout";
 import { Client } from "../domain/Client";
 import {
   AllSupportPageProps,
@@ -10,11 +9,10 @@ import {
 } from "../types/contentful";
 import { usePageTitle } from "../utils/usePageTitle";
 import { fetchContentful, useContentful } from "../utils/useContentful";
-import pageImage from "../images/ogImages/supportAssistance.jpg";
-import { ResourceList } from "../components/ResourceList";
-import { HeroBanner } from "../components/HeroBanner";
+import { ResourceList } from "../../components/ResourceList";
+import { HeroBanner } from "../../components/HeroBanner";
 
-interface Props extends RouteComponentProps {
+interface Props {
   client: Client;
 }
 
@@ -67,15 +65,15 @@ export const AllSupportPage = (props: Props): ReactElement => {
     filteredCategories.push(otherAssistance);
   }
 
-  usePageTitle(`${data?.page.title} | ${process.env.REACT_APP_SITE_NAME}`);
+  usePageTitle(`${data?.page.title} | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
 
   const seoObject = {
     title: data
-      ? `${data?.page.title} | ${process.env.REACT_APP_SITE_NAME}`
-      : `Support and Assistance Resources | ${process.env.REACT_APP_SITE_NAME}`,
+      ? `${data?.page.title} | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `Support and Assistance Resources | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
     pageDescription:
       data?.page.pageDescription || "Browse support and assistance resources by category.",
-    image: data?.page.ogImage?.url || pageImage,
+    image: data?.page.ogImage?.url || "/images/ogImages/supportAssistance.jpg",
     keywords: data?.page.keywords || [
       "New Jersey",
       "Support",

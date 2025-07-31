@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { useTranslation } from "react-i18next";
-import { formatCountiesArrayToString } from "../utils/formatCountiesArrayToString";
+import { formatCountiesArrayToString } from "../lib/utils/formatCountiesArrayToString";
 import { Fire } from "@phosphor-icons/react";
 
 interface Props {

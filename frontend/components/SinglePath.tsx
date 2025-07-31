@@ -1,6 +1,6 @@
-import { OccupationNodeProps, SelectProps } from "../types/contentful";
-import { flattenArray } from "../utils/flattenArray";
-import { numberShorthand } from "../utils/numberShorthand";
+import { OccupationNodeProps, SelectProps } from "../lib/types/contentful";
+import { flattenArray } from "../lib/utils/flattenArray";
+import { numberShorthand } from "../lib/utils/numberShorthand";
 
 export const SinglePath = ({
   items,

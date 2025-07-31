@@ -1,8 +1,8 @@
-import { LinkObjectProps, ThemeColors } from "../types/contentful";
+import { LinkObjectProps, ThemeColors } from "../lib/types/contentful";
 import { Heading } from "./modules/Heading";
 import { Button } from "./modules/Button";
 import { Cta } from "./modules/Cta";
-import { IconNames } from "../types/icons";
+import { IconNames } from "../lib/types/icons";
 
 interface CtaBannerProps {
   className?: string;
@@ -27,7 +27,7 @@ const CtaBanner = ({
   theme = "navy",
 }: CtaBannerProps) => {
   const linkItems =
-    process.env.REACT_APP_FEATURE_CAREER_PATHWAYS === "true"
+    process.env.NEXT_PUBLIC_FEATURE_CAREER_PATHWAYS === "true"
       ? links
       : links?.filter((l) => l.copy !== "NJ Career Pathways");
   return (

@@ -1,7 +1,7 @@
 import { RouteComponentProps } from "@reach/router";
 import { ReactElement } from "react";
-import { Client } from "../domain/Client";
-import pageImage from "../images/ogImages/homePage.jpg";
+import { Client } from "./domain/Client";
+import pageImage from "/images/ogImages/homePage.jpg";
 import { Layout } from "../components/Layout";
 import { HeroBanner } from "../components/HeroBanner";
 import { useTranslation } from "react-i18next";
@@ -12,7 +12,7 @@ interface Props extends RouteComponentProps {
 }
 
 const seoObject = {
-  title: `Tools | ${process.env.REACT_APP_SITE_NAME}`,
+  title: `Tools | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
   description: "Certifications, Prage?.url ofessional Development, Apprenticeships & More!",
   image: pageImage,
   url: "/tools",

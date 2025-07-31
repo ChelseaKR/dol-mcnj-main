@@ -1,17 +1,16 @@
 import { ReactElement, useEffect, useState } from "react";
-import { RouteComponentProps, WindowLocation } from "@reach/router";
 import { Client } from "../domain/Client";
-import { Layout } from "../components/Layout";
+import { Layout } from "../../components/Layout";
 
 import ContactInfo from "./ContactInfo";
 import ContactForm from "./ContactForm";
 import ContactSuccess from "./ContactSuccess";
 import ContactError from "./ContactError";
-import { HeroBanner } from "../components/HeroBanner";
+import { HeroBanner } from "../../components/HeroBanner";
 import { useTranslation } from "react-i18next";
 import { parseMarkdownToHTMLWithLinksInNewTab } from "../utils/parseMarkdownToHTML";
 
-interface Props extends RouteComponentProps {
+interface Props {
   client: Client;
   location?: WindowLocation<unknown> | undefined;
 }

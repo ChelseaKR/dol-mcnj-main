@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { useTranslation } from "react-i18next";
-import { formatCountiesArrayToString } from "../utils/formatCountiesArrayToString";
-import { parseMarkdownToHTMLWithLinksInNewTab } from "../utils/parseMarkdownToHTML";
+import { formatCountiesArrayToString } from "../lib/utils/formatCountiesArrayToString";
+import { parseMarkdownToHTMLWithLinksInNewTab } from "../lib/utils/parseMarkdownToHTML";
 
 interface Props {
   message?: string;

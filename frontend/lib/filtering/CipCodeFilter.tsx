@@ -1,11 +1,11 @@
 import React, { ChangeEvent, ReactElement, useContext, useEffect, useState } from "react";
 import { FilterActionType, FilterContext } from "./FilterContext";
-import { FilterableElement } from "../domain/Filter";
-import { TrainingResult } from "../domain/Training";
+import { FilterableElement } from "./domain/Filter";
+import { TrainingResult } from "./domain/Training";
 import { Input } from "../components/Input";
 import { InlineIcon } from "../components/InlineIcon";
 import { useTranslation } from "react-i18next";
-import { toggleParams } from "../utils/updateUrlParams";
+import { toggleParams } from "./utils/updateUrlParams";
 
 function isValidCipCode(cip: string): boolean {
   if (cip === "") return true;

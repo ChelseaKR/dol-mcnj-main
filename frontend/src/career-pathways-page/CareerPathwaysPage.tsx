@@ -39,7 +39,7 @@ export const CareerPathwaysPage = (props: Props): ReactElement<Props> => {
     }
   }, [industryData]);
 
-  usePageTitle(`${data?.page.title} | ${process.env.REACT_APP_SITE_NAME}`);
+  usePageTitle(`${data?.page.title} | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
 
   if (props.slug && industryData?.industryCollection?.items.length === 0) {
     return <NotFoundPage client={props.client} />;
@@ -77,8 +77,8 @@ export const CareerPathwaysPage = (props: Props): ReactElement<Props> => {
 
   const seoObject = {
     title: data
-      ? `${data?.page.title} | ${process.env.REACT_APP_SITE_NAME}`
-      : `Career Pathways | ${process.env.REACT_APP_SITE_NAME}`,
+      ? `${data?.page.title} | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `Career Pathways | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
     pageDescription:
       data?.page.pageDescription ||
       "Explore popular industries and careers in the state of New Jersey.",

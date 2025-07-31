@@ -1,9 +1,9 @@
 import { ReactElement, useEffect, useState, useRef } from "react";
 import { Link, RouteComponentProps } from "@reach/router";
 
-import { Client } from "../domain/Client";
-import { Error } from "../domain/Error";
-import { Training } from "../domain/Training";
+import { Client } from "./domain/Client";
+import { Error } from "./domain/Error";
+import { Training } from "./domain/Training";
 import { InlineIcon } from "../components/InlineIcon";
 
 import { SomethingWentWrongPage } from "../error/SomethingWentWrongPage";
@@ -16,26 +16,26 @@ import { StatBlock } from "../components/StatBlock";
 import { UnstyledButton } from "../components/UnstyledButton";
 import { CipDrawerContent } from "../components/CipDrawerContent";
 
-import { usePageTitle } from "../utils/usePageTitle";
+import { usePageTitle } from "./utils/usePageTitle";
 
-import { formatPercentEmployed } from "../presenters/formatPercentEmployed";
+import { formatPercentEmployed } from "./presenters/formatPercentEmployed";
 
 import { Icon } from "@material-ui/core";
 import { formatMoney } from "accounting";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 
-import { PROVIDER_MISSING_INFO, STAT_MISSING_DATA_INDICATOR } from "../constants";
+import { PROVIDER_MISSING_INFO, STAT_MISSING_DATA_INDICATOR } from "./constants";
 import { Trans, useTranslation } from "react-i18next";
-import { logEvent } from "../analytics";
+import { logEvent } from "./analytics";
 import { useReactToPrint } from "react-to-print";
 import { Tooltip } from "react-tooltip";
 import { LinkObject } from "../components/modules/LinkObject";
-import { IconNames } from "../types/icons";
+import { IconNames } from "./types/icons";
 import { LinkSimple, Printer } from "@phosphor-icons/react";
 import { Helmet } from "react-helmet-async";
 import { Button } from "../components/Button";
 import { Flag } from "@phosphor-icons/react";
-import { formatCip } from "../utils/formatCip";
+import { formatCip } from "./utils/formatCip";
 
 interface Props extends RouteComponentProps {
   client: Client;
@@ -55,7 +55,7 @@ export const TrainingPage = (props: Props): ReactElement => {
   const [error, setError] = useState<Error | null>(null);
   const [copy, setCopy] = useState<Copy | null>(null);
   const componentRef = useRef<HTMLDivElement>(null);
-  usePageTitle(`${training?.name} | Training | ${process.env.REACT_APP_SITE_NAME}`);
+  usePageTitle(`${training?.name} | Training | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
 
   useEffect(() => {
     setLoading(true); // Start loading
@@ -314,8 +314,8 @@ export const TrainingPage = (props: Props): ReactElement => {
   };
   const seoObject = {
     title: training
-      ? `${training ? training.name : ""} | Training | ${process.env.REACT_APP_SITE_NAME}`
-      : `Training | ${process.env.REACT_APP_SITE_NAME}`,
+      ? `${training ? training.name : ""} | Training | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `Training | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
     pageDescription: training?.description,
     url: props.location?.pathname || "/training",
   };

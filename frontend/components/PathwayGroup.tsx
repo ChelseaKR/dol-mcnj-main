@@ -1,7 +1,7 @@
-import { PathwayGroupProps, SelectProps, SinglePathwayProps } from "../types/contentful";
-import { useContentful } from "../utils/useContentful";
+import { PathwayGroupProps, SelectProps, SinglePathwayProps } from "../lib/types/contentful";
+import { useContentful } from "../lib/utils/useContentful";
 import { useEffect } from "react";
-import { groupObjectsByLevel } from "../utils/groupObjectsByLevel";
+import { groupObjectsByLevel } from "../lib/utils/groupObjectsByLevel";
 import { IndustryFieldDrawer } from "./IndustryFieldDrawer";
 import { Circle } from "@phosphor-icons/react";
 import { Heading } from "./modules/Heading";

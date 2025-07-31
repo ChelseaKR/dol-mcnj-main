@@ -1,6 +1,6 @@
-import { NavMenuData } from "../types/contentful";
+import { NavMenuData } from "../lib/types/contentful";
 import { NavMenu } from "./modules/NavMenu";
-import logo from "../images/jerseyLogoFooter.png";
+import logo from "../public/images/jerseyLogoFooter.png";
 import { SubFooter } from "./SubFooter";
 
 export const Footer = ({

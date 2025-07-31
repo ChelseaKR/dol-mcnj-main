@@ -6,7 +6,7 @@ import {
   //, MARKS, Document, Block
 } from "@contentful/rich-text-types";
 import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer";
-import { AssetBlock } from "../types/contentful";
+import { AssetBlock } from "../lib/types/contentful";
 
 export type Props = {
   className?: string;

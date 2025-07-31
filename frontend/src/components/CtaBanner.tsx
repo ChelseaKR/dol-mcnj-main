@@ -27,7 +27,7 @@ const CtaBanner = ({
   theme = "navy",
 }: CtaBannerProps) => {
   const linkItems =
-    process.env.REACT_APP_FEATURE_CAREER_PATHWAYS === "true"
+    process.env.NEXT_PUBLIC_FEATURE_CAREER_PATHWAYS === "true"
       ? links
       : links?.filter((l) => l.copy !== "NJ Career Pathways");
   return (

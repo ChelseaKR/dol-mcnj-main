@@ -1,4 +1,4 @@
-import { NavMenuData } from "../types/contentful";
+import { NavMenuData } from "../lib/types/contentful";
 import { Icon } from "@material-ui/core";
 import stateSeal from "@newjersey/njwds/dist/img/nj_state_seal.png";
 

@@ -1,5 +1,5 @@
-import { ResourceListProps } from "../types/contentful";
-import { useContentful } from "../utils/useContentful";
+import { ResourceListProps } from "../lib/types/contentful";
+import { useContentful } from "../lib/utils/useContentful";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const ResourceItems = (props: any) => {

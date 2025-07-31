@@ -1,16 +1,16 @@
 import { ReactElement, useEffect, useState } from "react";
 import { RouteComponentProps } from "@reach/router";
-import { Client } from "../domain/Client";
-import { CareerPathwaysPageData, IndustryProps } from "../types/contentful";
+import { Client } from "./domain/Client";
+import { CareerPathwaysPageData, IndustryProps } from "./types/contentful";
 import { Layout } from "../components/Layout";
-import { OccupationDetail } from "../domain/Occupation";
-import { Error } from "../domain/Error";
+import { OccupationDetail } from "./domain/Occupation";
+import { Error } from "./domain/Error";
 import { OccupationBlock } from "../components/OccupationBlock";
-import { useContentful } from "../utils/useContentful";
+import { useContentful } from "./utils/useContentful";
 import { CareerPathways } from "../components/CareerPathways";
 import { NotFoundPage } from "../error/NotFoundPage";
-import { usePageTitle } from "../utils/usePageTitle";
-import pageImage from "../images/ogImages/careerPathways.png";
+import { usePageTitle } from "./utils/usePageTitle";
+import pageImage from "/images/ogImages/careerPathways.png";
 import { Heading } from "../components/modules/Heading";
 import { Icon } from "@material-ui/core";
 import { ArrowLeft } from "@phosphor-icons/react";
@@ -42,7 +42,7 @@ export const IndustryPage = (props: Props): ReactElement<Props> => {
     }
   }, [industryData]);
 
-  usePageTitle(`${data?.page.title} | ${process.env.REACT_APP_SITE_NAME}`);
+  usePageTitle(`${data?.page.title} | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
 
   useEffect(() => {
     if ((occupation !== undefined || occupation !== null || occupation !== "") && occupation) {
@@ -81,8 +81,8 @@ export const IndustryPage = (props: Props): ReactElement<Props> => {
 
   const seoObject = {
     title: data
-      ? `${industry ? `${industry.title} | ` : ""}${data?.page.title} | ${process.env.REACT_APP_SITE_NAME}`
-      : `Career Pathways | ${process.env.REACT_APP_SITE_NAME}`,
+      ? `${industry ? `${industry.title} | ` : ""}${data?.page.title} | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `Career Pathways | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
     pageDescription:
       data?.page.pageDescription ||
       "Explore popular industries and careers in the state of New Jersey.",

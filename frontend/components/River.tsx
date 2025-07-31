@@ -1,5 +1,5 @@
-import { HeadingLevel, ImageProps } from "../types/contentful";
-import { parseMarkdownToHTML } from "../utils/parseMarkdownToHTML";
+import { HeadingLevel, ImageProps } from "../lib/types/contentful";
+import { parseMarkdownToHTML } from "../lib/utils/parseMarkdownToHTML";
 import { Heading } from "./modules/Heading";
 
 interface RiverProps {

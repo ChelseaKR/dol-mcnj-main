@@ -1,7 +1,7 @@
 import { useState, ReactElement, useEffect } from "react";
 import { Document } from "@contentful/rich-text-types";
 import { ContentfulRichText } from "../components/ContentfulRichText";
-import { AssetBlock } from "../types/contentful";
+import { AssetBlock } from "../lib/types/contentful";
 
 export interface AccordionData {
   title: string | ReactElement;

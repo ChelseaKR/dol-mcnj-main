@@ -1,5 +1,5 @@
-import { Selector } from "../svg/Selector";
-import { LinkObjectProps } from "../types/contentful";
+import { Selector } from "../public/svg/Selector";
+import { LinkObjectProps } from "../lib/types/contentful";
 
 export const Interrupter = ({ header, links }: { header: string; links: LinkObjectProps[] }) => {
   return (

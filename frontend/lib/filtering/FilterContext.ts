@@ -1,8 +1,8 @@
 /* eslint-disable  @typescript-eslint/no-redeclare */
 
 import React, { Dispatch, Reducer } from "react";
-import { logEvent } from "../analytics";
-import { Filter, FilterableElement } from "../domain/Filter";
+import { logEvent } from "./analytics";
+import { Filter, FilterableElement } from "./domain/Filter";
 
 export const initialFilterState = {
   filters: [],

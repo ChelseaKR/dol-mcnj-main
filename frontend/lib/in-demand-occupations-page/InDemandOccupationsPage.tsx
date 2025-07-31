@@ -1,13 +1,13 @@
 import { ReactElement, useEffect, useState } from "react";
 import { RouteComponentProps } from "@reach/router";
-import { Client } from "../domain/Client";
-import { InDemandOccupation } from "../domain/Occupation";
+import { Client } from "./domain/Client";
+import { InDemandOccupation } from "./domain/Occupation";
 import { MajorGroup } from "./MajorGroup";
 import { Typeahead } from "./Typeahead";
 import { useTranslation } from "react-i18next";
 import { Layout } from "../components/Layout";
-import { usePageTitle } from "../utils/usePageTitle";
-import pageImage from "../images/ogImages/inDemand.jpg";
+import { usePageTitle } from "./utils/usePageTitle";
+import pageImage from "/images/ogImages/inDemand.jpg";
 import { HeroBanner } from "../components/HeroBanner";
 
 interface Props extends RouteComponentProps {
@@ -53,13 +53,13 @@ export const InDemandOccupationsPage = (props: Props): ReactElement => {
     ));
   };
 
-  usePageTitle(`In-Demand Occupations | ${process.env.REACT_APP_SITE_NAME}`);
+  usePageTitle(`In-Demand Occupations | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
 
   return (
     <Layout
       client={props.client}
       seo={{
-        title: `In-Demand Occupations | ${process.env.REACT_APP_SITE_NAME}`,
+        title: `In-Demand Occupations | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
         pageDescription:
           "Discover high-demand jobs and career opportunities in New Jersey. Explore careers with the NJ Department of Labor's In-Demand Occupations list.",
         url: props.location?.pathname || "/in-demand-occupations",
