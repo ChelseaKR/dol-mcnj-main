@@ -1,7 +1,7 @@
 import manufacturingImage from "/images/welder.jpg";
 import healthcareImage from "/images/medical.jpg";
 import tdlImage from "/images/mechanic.jpg";
-import { SelectorProps } from "/svg/Selector";
+import { SelectorProps } from "../../src/svg/Selector";
 import sectionImage from "/images/1207302676_cropped-min.png";
 import sectionImage2 from "/images/1404069302-min.jpg";
 

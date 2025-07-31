@@ -8,7 +8,7 @@ import {
   NavMenuProps,
   CareerPathwaysPageProps,
   JobCountProps,
-} from "./types/contentful";
+} from "../types/contentful";
 
 export interface Client {
   getTrainingsByQuery: (query: string, observer: Observer<TrainingResult[]>) => void;

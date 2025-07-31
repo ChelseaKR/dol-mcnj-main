@@ -1,4 +1,5 @@
 import { ReactElement, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { Client } from "../domain/Client";
 import { Layout } from "../../components/Layout";
 
@@ -12,9 +13,9 @@ import { parseMarkdownToHTMLWithLinksInNewTab } from "../utils/parseMarkdownToHT
 
 interface Props {
   client: Client;
-  location?: WindowLocation<unknown> | undefined;
 }
 export const ContactUsPage = (props: Props): ReactElement<Props> => {
+  const router = useRouter();
   const [formSuccess, setFormSuccess] = useState<boolean | undefined>(undefined);
   const { t } = useTranslation();
 
@@ -78,7 +79,7 @@ export const ContactUsPage = (props: Props): ReactElement<Props> => {
       client={props.client}
       seo={{
         title: "Contact Us | New Jersey Career Central",
-        url: props.location?.pathname,
+        url: router.pathname,
       }}
     >
       <HeroBanner eyebrow={t("ContactPage.eyebrow")} heading={t("ContactPage.header")} />

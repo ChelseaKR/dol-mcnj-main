@@ -1,10 +1,10 @@
 import { CircularProgress } from "@material-ui/core";
 import { GraduationCap, Hourglass, MapPinLine, Warning } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
-import { Client } from "../../domain/Client";
-import { TrainingResult } from "../../domain/Training";
-import { toUsCurrency } from "../../utils/toUsCurrency";
-import { calendarLength } from "../../utils/calendarLength";
+import { Client } from "../../lib/domain/Client";
+import { TrainingResult } from "../../lib/domain/Training";
+import { toUsCurrency } from "../../lib/utils/toUsCurrency";
+import { calendarLength } from "../../lib/utils/calendarLength";
 
 export const RelatedTrainingSearch = ({ query, client }: { query: string; client: Client }) => {
   const [loading, setLoading] = useState<boolean>(false);

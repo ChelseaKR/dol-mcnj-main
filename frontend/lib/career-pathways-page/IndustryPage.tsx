@@ -1,26 +1,27 @@
 import { ReactElement, useEffect, useState } from "react";
-import { RouteComponentProps } from "@reach/router";
-import { Client } from "./domain/Client";
-import { CareerPathwaysPageData, IndustryProps } from "./types/contentful";
-import { Layout } from "../components/Layout";
-import { OccupationDetail } from "./domain/Occupation";
-import { Error } from "./domain/Error";
-import { OccupationBlock } from "../components/OccupationBlock";
-import { useContentful } from "./utils/useContentful";
-import { CareerPathways } from "../components/CareerPathways";
+import { useRouter } from "next/router";
+import { Client } from "../domain/Client";
+import { CareerPathwaysPageData, IndustryProps } from "../types/contentful";
+import { Layout } from "../../components/Layout";
+import { OccupationDetail } from "../domain/Occupation";
+import { Error } from "../domain/Error";
+import { OccupationBlock } from "../../components/OccupationBlock";
+import { useContentful } from "../utils/useContentful";
+import { CareerPathways } from "../../components/CareerPathways";
 import { NotFoundPage } from "../error/NotFoundPage";
-import { usePageTitle } from "./utils/usePageTitle";
+import { usePageTitle } from "../utils/usePageTitle";
 import pageImage from "/images/ogImages/careerPathways.png";
-import { Heading } from "../components/modules/Heading";
+import { Heading } from "../../components/modules/Heading";
 import { Icon } from "@material-ui/core";
 import { ArrowLeft } from "@phosphor-icons/react";
 
-interface Props extends RouteComponentProps {
+interface Props {
   client: Client;
   slug?: string;
 }
 
 export const IndustryPage = (props: Props): ReactElement<Props> => {
+  const router = useRouter();
   const [industry, setIndustry] = useState<IndustryProps>();
   const [occupation, setOccupation] = useState<string>();
   const [occupationDetail, setOccupationDetail] = useState<OccupationDetail>();
@@ -86,7 +87,7 @@ export const IndustryPage = (props: Props): ReactElement<Props> => {
     pageDescription:
       data?.page.pageDescription ||
       "Explore popular industries and careers in the state of New Jersey.",
-    image: data?.page.ogImage?.url || pageImage,
+    image: data?.page.ogImage?.url || pageImage.src,
     keywords: data?.page.keywords || [
       "New Jersey",
       "Career",
@@ -95,7 +96,7 @@ export const IndustryPage = (props: Props): ReactElement<Props> => {
       "New Jersey Career Central",
       "Career Pathways",
     ],
-    url: props.location?.pathname || "/career-pathways",
+    url: router.pathname || "/career-pathways",
   };
 
   const hasMaps = industry?.careerMaps?.items && industry?.careerMaps?.items.length > 0;

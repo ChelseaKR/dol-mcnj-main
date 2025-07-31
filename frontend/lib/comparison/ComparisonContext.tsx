@@ -1,7 +1,7 @@
 /* eslint-disable  @typescript-eslint/no-redeclare */
 
 import React, { Dispatch, Reducer } from "react";
-import { TrainingResult } from "./domain/Training";
+import { TrainingResult } from "../domain/Training";
 
 export const initialComparisonState = {
   comparison: [],

@@ -1,27 +1,28 @@
 import { ReactElement, useEffect, useState } from "react";
-import { RouteComponentProps } from "@reach/router";
-import { Client } from "./domain/Client";
-import { CareerPathwaysPageData, IndustryProps, ThemeColors } from "./types/contentful";
-import { Layout } from "../components/Layout";
-import { IndustrySelector } from "../components/IndustrySelector";
-import { useContentful } from "./utils/useContentful";
+import { useRouter } from "next/router";
+import { Client } from "../domain/Client";
+import { CareerPathwaysPageData, IndustryProps, ThemeColors } from "../types/contentful";
+import { Layout } from "../../components/Layout";
+import { IndustrySelector } from "../../components/IndustrySelector";
+import { useContentful } from "../utils/useContentful";
 import { NotFoundPage } from "../error/NotFoundPage";
-import { CtaBanner } from "../components/CtaBanner";
-import { usePageTitle } from "./utils/usePageTitle";
+import { CtaBanner } from "../../components/CtaBanner";
+import { usePageTitle } from "../utils/usePageTitle";
 import pageImage from "/images/ogImages/careerPathways.png";
-import { Heading } from "../components/modules/Heading";
+import { Heading } from "../../components/modules/Heading";
 import { content } from "./content";
-import { parseMarkdownToHTML } from "./utils/parseMarkdownToHTML";
-import { HeroBanner } from "../components/HeroBanner";
+import { parseMarkdownToHTML } from "../utils/parseMarkdownToHTML";
+import { HeroBanner } from "../../components/HeroBanner";
 import pathwaysImage from "/images/pathways.png";
 // import { parseMarkdownToHTML } from "./utils/parseMarkdownToHTML";
 
-interface Props extends RouteComponentProps {
+interface Props {
   client: Client;
   slug?: string;
 }
 
 export const CareerPathwaysPage = (props: Props): ReactElement<Props> => {
+  const router = useRouter();
   const [industry, setIndustry] = useState<IndustryProps>();
 
   const data: CareerPathwaysPageData = useContentful({ path: "/career-pathways" });
@@ -82,7 +83,7 @@ export const CareerPathwaysPage = (props: Props): ReactElement<Props> => {
     pageDescription:
       data?.page.pageDescription ||
       "Explore popular industries and careers in the state of New Jersey.",
-    image: data?.page.ogImage?.url || pageImage,
+    image: data?.page.ogImage?.url || pageImage.src,
     keywords: data?.page.keywords || [
       "New Jersey",
       "Career",
@@ -91,7 +92,7 @@ export const CareerPathwaysPage = (props: Props): ReactElement<Props> => {
       "New Jersey Career Central",
       "Career Pathways",
     ],
-    url: props.location?.pathname || "/career-pathways",
+    url: router.pathname || "/career-pathways",
   };
 
   return (
@@ -108,7 +109,7 @@ export const CareerPathwaysPage = (props: Props): ReactElement<Props> => {
             eyebrow={content.banner.title}
             heading={content.banner.subheading}
             message={content.banner.description}
-            image={pathwaysImage}
+            image={pathwaysImage.src}
             theme="purple"
             buttons={[
               {
@@ -131,7 +132,7 @@ export const CareerPathwaysPage = (props: Props): ReactElement<Props> => {
               {content.copySections.map((section, index) => (
                 <div key={`body-copy-${index}`} className="contentContainer">
                   <div className="image">
-                    <img src={section.image} alt="" />
+                    <img src={section.image.src} alt="" />
                   </div>
                   <div className="contentBlocks">
                     {section.blocks.map((block) => (

@@ -1,5 +1,5 @@
 import { OccupationNodeProps } from "../../lib/types/contentful";
-import { parseMarkdownToHTML } from "../../utils/parseMarkdownToHTML";
+import { parseMarkdownToHTML } from "../../lib/utils/parseMarkdownToHTML";
 import { IconSelector } from "../IconSelector";
 
 type ContentMapping = {

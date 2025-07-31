@@ -1,4 +1,5 @@
 import { ReactElement, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { Layout } from "../../components/Layout";
 import { Client } from "../domain/Client";
 import {
@@ -17,6 +18,7 @@ interface Props {
 }
 
 export const AllSupportPage = (props: Props): ReactElement => {
+  const router = useRouter();
   const data: AllSupportPageProps = useContentful({
     path: `/all-support`,
   });
@@ -84,7 +86,7 @@ export const AllSupportPage = (props: Props): ReactElement => {
       "Career",
       "My Career NJ",
     ],
-    url: props.location?.pathname || "/support-resources",
+    url: router.pathname || "/support-resources",
   };
 
   const tags = Array.from(
