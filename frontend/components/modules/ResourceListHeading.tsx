@@ -1,5 +1,5 @@
 import { Tag } from "./Tag";
-import { TagProps } from "../../types/contentful";
+import { TagProps } from "../../lib/types/contentful";
 import { CaretDown } from "@phosphor-icons/react";
 
 interface ResourceListHeadingProps {

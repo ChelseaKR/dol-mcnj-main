@@ -14,14 +14,14 @@ export const SubFooter = () => {
         <div className="links">
           <div>
             <a href="https://nj.gov/opra/" target="_blank" rel="noopener noreferrer">
-              <img src={opra} alt="NJ Open Public Records Act" width={166} height={45} />
+              <img src={opra.src} alt="NJ Open Public Records Act" width={166} height={45} />
             </a>
             <a
               href="https://my.state.nj.us/openam/UI/Login"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={myNJ} alt="myNJ Portal Logo" width={165} height={38} />
+              <img src={myNJ.src} alt="myNJ Portal Logo" width={165} height={38} />
             </a>
           </div>
           <div className="socials">
@@ -75,7 +75,7 @@ export const SubFooter = () => {
           </div>
         </div>
         <a target="_blank" rel="noopener noreferrer" href="https://nj.gov/it/">
-          <img src={njoit} alt="NJ Office of Information Technology" width={157} height={26} />
+          <img src={njoit.src} alt="NJ Office of Information Technology" width={157} height={26} />
         </a>
       </div>
     </div>

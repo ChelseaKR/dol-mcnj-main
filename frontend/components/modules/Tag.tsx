@@ -1,4 +1,4 @@
-import { IconNames } from "../../types/icons";
+import { IconNames } from "../../lib/types/icons";
 import { IconSelector } from "../IconSelector";
 
 interface TagProps {

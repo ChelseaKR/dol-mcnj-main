@@ -1,5 +1,5 @@
 import { ArrowRight, Info, Star, X } from "@phosphor-icons/react";
-import { content } from "../career-pathways-page/content";
+import { content } from "../lib/career-pathways-page/content";
 import { Heading } from "./modules/Heading";
 import { LinkObject } from "./modules/LinkObject";
 import { useEffect, useState } from "react";
@@ -46,7 +46,7 @@ const Panel = ({
 
         <div className="copy">
           {description && <p>{description}</p>}
-          {photo && <img src={photo} alt={title} className="photo" />}
+          {photo && <img src={typeof photo === 'string' ? photo : (photo as any).src} alt={title} className="photo" />}
         </div>
 
         <div className="boxes-wrapper">
@@ -116,7 +116,7 @@ export const IndustrySelector = () => {
                 drawerCards,
               } = props;
               return (
-                <li key={image}>
+                <li key={slug || index}>
                   <div>
                     <div className="heading-section">
                       <p className="title">{title}</p>
@@ -124,7 +124,7 @@ export const IndustrySelector = () => {
                         {active ? "Pathways included" : "Pathways coming soon"}
                       </span>
                       <div className="image">
-                        <img src={image} alt={title} />
+                        <img src={typeof image === 'string' ? image : image.src} alt={title} />
                       </div>
                     </div>
                     <p>{description}</p>
@@ -150,7 +150,7 @@ export const IndustrySelector = () => {
                     open={activePanel === index}
                     drawerCards={drawerCards}
                     setOpen={setActivePanel}
-                    photo={image}
+                    photo={typeof image === 'string' ? image : image.src}
                     description={drawerDescription}
                     title={title}
                     shorthandTitle={shorthandTitle}

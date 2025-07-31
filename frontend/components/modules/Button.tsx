@@ -1,6 +1,7 @@
-import { LinkObjectProps } from "../../types/contentful";
-import { IconNames } from "../../types/icons";
+import { LinkObjectProps } from "../../lib/types/contentful";
+import { IconNames } from "../../lib/types/icons";
 import { IconSelector } from "../IconSelector";
+import * as Svg from "../../public/svg/Icons";
 
 interface ButtonProps extends LinkObjectProps {
   buttonId?: string;
@@ -69,7 +70,7 @@ const Button = ({
     >
       {svgName && !iconPrefix && !iconSuffix && (
         <span className="svg-container">
-          <IconSelector svgName={svgName} size={20} />
+          <IconSelector svgName={svgName as keyof typeof Svg} size={20} />
         </span>
       )}
       {iconPrefix && !svgName && (
@@ -102,7 +103,7 @@ const Button = ({
     >
       {svgName && !iconPrefix && !iconSuffix && (
         <span className="svg-container">
-          <IconSelector svgName={svgName} size={20} />
+          <IconSelector svgName={svgName as keyof typeof Svg} size={20} />
         </span>
       )}
       {iconPrefix && !svgName && <IconSelector name={iconPrefix as IconNames} size={20} />}

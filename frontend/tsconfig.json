@@ -7,7 +7,8 @@
       "esnext"
     ],
     "types": [
-      "jest"
+      "jest",
+      "node"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -27,9 +28,18 @@
         "./node_modules/@types/react"
       ]
     },
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
     "src"
   ],
   "exclude": [

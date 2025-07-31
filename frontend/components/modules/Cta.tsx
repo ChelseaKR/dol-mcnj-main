@@ -1,7 +1,7 @@
 import { Button } from "./Button";
 import { Heading } from "./Heading";
-import { IconNames } from "../../types/icons";
-import { LinkObjectProps, ThemeColors } from "../../types/contentful";
+import { IconNames } from "../../lib/types/icons";
+import { LinkObjectProps, ThemeColors } from "../../lib/types/contentful";
 
 interface CtaProps {
   className?: string;

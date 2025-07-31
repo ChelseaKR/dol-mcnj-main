@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import { NavMenuData, TopLevelNavItemProps } from "../../types/contentful";
+import { NavMenuData, TopLevelNavItemProps } from "../../lib/types/contentful";
 import { LinkObject } from "./LinkObject";
 import { NavSubMenu } from "./NavSubMenu";
 

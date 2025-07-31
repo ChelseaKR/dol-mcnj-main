@@ -1,4 +1,4 @@
-import { TopLevelNavItemProps } from "../../types/contentful";
+import { TopLevelNavItemProps } from "../../lib/types/contentful";
 import { LinkObject } from "./LinkObject";
 import { Icon } from "@material-ui/core";
 

@@ -1,8 +1,8 @@
 import { CaretRight } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 import { useLocation } from "@reach/router";
-import { FaqTopic } from "../../types/contentful";
-import { slugify } from "../../utils/slugify";
+import { FaqTopic } from "../../lib/types/contentful";
+import { slugify } from "../../lib/utils/slugify";
 
 interface DropGroupProps {
   sys: { id: string };

@@ -1,5 +1,6 @@
 import { IconSelector } from "./IconSelector";
 import { IconCardProps, IconNames } from "../lib/types/icons";
+import * as Svg from "../public/svg/Icons";
 
 const CardContent = ({
   centered,
@@ -13,12 +14,13 @@ const CardContent = ({
 }: IconCardProps) => {
   const iconName = icon as IconNames;
   const indicatorName = indicator as IconNames;
+  const svgName = svg as keyof typeof Svg;
 
   return (
     <>
       <div className="icons">
         <span className="icon-container">
-          <IconSelector weight={iconWeight} svgName={svg} name={iconName} size={32} />
+          <IconSelector weight={iconWeight} svgName={svgName} name={iconName} size={32} />
         </span>
         {!centered && indicatorName && (
           <span className="icon-container">

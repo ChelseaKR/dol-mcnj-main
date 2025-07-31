@@ -10,7 +10,7 @@ export const GlobalHeader = ({ items }: { items?: NavMenuData }) => {
       <div className="global-header">
         <div className="container">
           <div className="logo">
-            <img src={stateSeal} alt="New Jersey State Seal" />
+            <img src={typeof stateSeal === 'string' ? stateSeal : stateSeal.src} alt="New Jersey State Seal" />
             Official Site Of The State Of New Jersey
           </div>
           <nav aria-label="global-navigation">

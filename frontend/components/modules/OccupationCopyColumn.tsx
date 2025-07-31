@@ -1,4 +1,4 @@
-import { OccupationNodeProps } from "../../types/contentful";
+import { OccupationNodeProps } from "../../lib/types/contentful";
 import { parseMarkdownToHTML } from "../../utils/parseMarkdownToHTML";
 import { IconSelector } from "../IconSelector";
 

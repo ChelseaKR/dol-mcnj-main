@@ -1,5 +1,5 @@
 import { Icon } from "@material-ui/core";
-import { LinkObjectProps } from "../../types/contentful";
+import { LinkObjectProps } from "../../lib/types/contentful";
 import { ArrowSquareOut } from "@phosphor-icons/react";
 import { IconSelector } from "../IconSelector";
 

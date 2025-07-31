@@ -1,6 +1,6 @@
 import { ComponentType } from "react";
 import * as Icon from "@phosphor-icons/react";
-import { IconNames } from "../../types/icons";
+import { IconNames } from "../../lib/types/icons";
 
 export const PhosphorIconSelector = ({
   name,
