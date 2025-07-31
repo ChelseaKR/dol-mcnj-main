@@ -1,48 +1,126 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { GetServerSideProps } from "next";
+import { Layout } from "../src/components/Layout";
+import { ApiClient } from "../src/ApiClient";
+import { HomeBanner } from "../src/landing-page/components/HomeBanner";
+import { TopTools } from "../src/landing-page/components/TopTools";
+import { Resources } from "../src/landing-page/components/Resourses";
+import { useTranslation } from "react-i18next";
+import { content } from "../src/landing-page/content";
+import { CardProps } from "../src/components/Card";
+import pageImage from "../src/images/ogImages/homePage.jpg";
 
-export default function Home() {  
+interface Props {
+  // We'll pass a simple object instead of class instance for SSR
+}
+
+export default function Home(props: Props): ReactElement {
+  const { t } = useTranslation();
+  // Create client on the client side
+  const client = new ApiClient();
+
+  const seoObject = {
+    title: process.env.NEXT_PUBLIC_SITE_NAME as string,
+    pageDescription:
+      "Explore My Career NJ to find job training, career resources, and employment opportunities with the New Jersey Department of Labor.",
+    image: typeof pageImage === 'string' ? pageImage : pageImage.src,
+    url: "/",
+  };
+
   return (
-    <div style={{ padding: "2rem", fontFamily: "system-ui, -apple-system, sans-serif" }}>
-      <header style={{ borderBottom: "1px solid #ccc", marginBottom: "2rem", paddingBottom: "1rem" }}>
-        <h1 style={{ color: "#12263A", margin: 0 }}>My Career NJ</h1>
-        <p style={{ margin: "0.5rem 0 0 0", color: "#666" }}>Next.js Migration in Progress</p>
-      </header>
-      
-      <main style={{ textAlign: "center" }}>
-        <h2>Migration Status</h2>
-        <p>The basic Next.js setup is complete. Individual pages and features are being restored incrementally.</p>
-        
-        <div style={{ margin: "2rem auto", maxWidth: "600px", textAlign: "left", padding: "1rem", backgroundColor: "#f8f9fa", borderRadius: "8px" }}>
-          <h3 style={{ margin: "0 0 1rem 0", color: "#12263A" }}>Completed:</h3>
-          <ul>
-            <li>✅ Next.js 14 with React 18 installed</li>
-            <li>✅ SCSS and Material-UI v4 support</li>
-            <li>✅ Build and development server working</li>
-            <li>✅ Environment variables converted (REACT_APP_* → NEXT_PUBLIC_*)</li>
-            <li>✅ Backend API proxy configuration via Next.js rewrites</li>
-            <li>✅ Basic project structure (pages/, components/, lib/, public/)</li>
-          </ul>
-          
-          <h3 style={{ margin: "1.5rem 0 1rem 0", color: "#12263A" }}>In Progress:</h3>
-          <ul>
-            <li>🔄 Fixing import paths for Next.js structure</li>
-            <li>🔄 Restoring individual page routes</li>
-            <li>🔄 Component library integration</li>
-            <li>📋 Test infrastructure updates</li>
-          </ul>
-        </div>
-        
-        <div style={{ marginTop: "2rem", padding: "1rem", backgroundColor: "#e7f3ff", borderRadius: "8px" }}>
-          <p><strong>Original Features Being Preserved:</strong></p>
-          <p>All existing functionality including training search, occupation pages, career pathways, contact forms, analytics, and i18n will be restored.</p>
-        </div>
-      </main>
-    </div>
+    <Layout client={client} noPad seo={seoObject}>
+      <div className="home-page">
+        <HomeBanner
+          heading={t("LandingPage.bannerHeading")}
+          images={content.banner.images.map(img => ({
+            src: typeof img.src === 'string' ? img.src : img.src.src,
+            alt: img.alt
+          }))}
+          subheading={t("LandingPage.bannerSubheading")}
+          message={t("LandingPage.bannerMessageCopy")}
+          preload
+        />
+        <TopTools
+          heading={t("LandingPage.topToolsHeader")}
+          items={
+            [
+              {
+                heading: t("LandingPage.topToolNavigatorHeading"),
+                description: t("LandingPage.topToolNavigatorDescription"),
+                icon: "Compass",
+                link: {
+                  href: "/navigator",
+                  text: t("LandingPage.topToolNavigatorButtonText"),
+                },
+                theme: "blue",
+              },
+              {
+                heading: t("LandingPage.topToolExplorerHeading"),
+                description: t("LandingPage.topToolExplorerDescription"),
+                icon: "Signpost",
+                link: {
+                  href: "/training",
+                  text: t("LandingPage.topToolExplorerButtonText"),
+                },
+                theme: "green",
+              },
+              {
+                heading: t("LandingPage.topToolPathwaysHeading"),
+                description: t("LandingPage.topToolPathwaysDescription"),
+                icon: "Path",
+                link: {
+                  href: "/career-pathways",
+                  text: t("LandingPage.topToolPathwaysButtonText"),
+                },
+                theme: "purple",
+              },
+            ] as CardProps[]
+          }
+        />
+        <Resources
+          heading={t("LandingPage.resourcesHeading")}
+          subheading={t("LandingPage.resourcesDescription")}
+          items={[
+            {
+              heading: t("LandingPage.resourcesCard1"),
+              icon: "Briefcase",
+              theme: "blue",
+              link: {
+                href: "/tools#jobs",
+              },
+            },
+            {
+              heading: t("LandingPage.resourcesCard2"),
+              icon: "Signpost",
+              theme: "green",
+              link: {
+                href: "/tools#training",
+              },
+            },
+            {
+              heading: t("LandingPage.resourcesCard3"),
+              icon: "Path",
+              theme: "purple",
+              link: {
+                href: "/tools#career",
+              },
+            },
+            {
+              heading: t("LandingPage.resourcesCard4"),
+              icon: "Lifebuoy",
+              theme: "navy",
+              link: {
+                href: "/tools#resources",
+              },
+            },
+          ]}
+        />
+      </div>
+    </Layout>
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {},
   };
