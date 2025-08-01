@@ -14,7 +14,7 @@ interface Props extends RouteComponentProps {
 const seoObject = {
   title: `Tools | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
   description: "Certifications, Prage?.url ofessional Development, Apprenticeships & More!",
-  image: pageImage,
+  image: typeof pageImage === 'string' ? pageImage : pageImage.src,
   url: "/tools",
 };
 

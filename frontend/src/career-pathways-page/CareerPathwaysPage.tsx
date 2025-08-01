@@ -82,7 +82,7 @@ export const CareerPathwaysPage = (props: Props): ReactElement<Props> => {
     pageDescription:
       data?.page.pageDescription ||
       "Explore popular industries and careers in the state of New Jersey.",
-    image: data?.page.ogImage?.url || pageImage,
+    image: data?.page.ogImage?.url || (typeof pageImage === 'string' ? pageImage : pageImage.src),
     keywords: data?.page.keywords || [
       "New Jersey",
       "Career",
@@ -108,7 +108,7 @@ export const CareerPathwaysPage = (props: Props): ReactElement<Props> => {
             eyebrow={content.banner.title}
             heading={content.banner.subheading}
             message={content.banner.description}
-            image={pathwaysImage}
+            image={typeof pathwaysImage === 'string' ? pathwaysImage : pathwaysImage.src}
             theme="purple"
             buttons={[
               {
@@ -131,7 +131,7 @@ export const CareerPathwaysPage = (props: Props): ReactElement<Props> => {
               {content.copySections.map((section, index) => (
                 <div key={`body-copy-${index}`} className="contentContainer">
                   <div className="image">
-                    <img src={section.image} alt="" />
+                    <img src={typeof section.image === 'string' ? section.image : section.image.src} alt="" />
                   </div>
                   <div className="contentBlocks">
                     {section.blocks.map((block) => (

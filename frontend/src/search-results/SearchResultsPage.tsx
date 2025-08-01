@@ -225,7 +225,7 @@ export const SearchResultsPage = (props: Props): ReactElement<Props> => {
       seo={{
         title: pageTitle || `Search | Training Explorer | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
         url: props.location?.pathname || "/training/search",
-        image: pageImage,
+        image: typeof pageImage === 'string' ? pageImage : pageImage.src,
       }}
     >
       {showNoIndexTag && (

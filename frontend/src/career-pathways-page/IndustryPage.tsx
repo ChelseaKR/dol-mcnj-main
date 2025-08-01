@@ -86,7 +86,7 @@ export const IndustryPage = (props: Props): ReactElement<Props> => {
     pageDescription:
       data?.page.pageDescription ||
       "Explore popular industries and careers in the state of New Jersey.",
-    image: data?.page.ogImage?.url || pageImage,
+    image: data?.page?.ogImage?.url || (typeof pageImage === 'string' ? pageImage : pageImage.src),
     keywords: data?.page.keywords || [
       "New Jersey",
       "Career",

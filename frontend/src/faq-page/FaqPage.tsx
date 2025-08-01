@@ -44,7 +44,7 @@ export const FaqPage = (props: Props): ReactElement<Props> => {
       : `Frequently Asked Questions | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
     pageDescription:
       data?.page?.pageDescription || "Get answers to all of your My Career NJ questions",
-    image: data?.page?.ogImage?.url || pageImage,
+    image: data?.page?.ogImage?.url || (typeof pageImage === 'string' ? pageImage : pageImage.src),
     keywords: data?.page?.keywords || [
       "FAQ",
       "Frequently Asked Questions",

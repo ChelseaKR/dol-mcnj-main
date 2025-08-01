@@ -63,7 +63,7 @@ export const InDemandOccupationsPage = (props: Props): ReactElement => {
         pageDescription:
           "Discover high-demand jobs and career opportunities in New Jersey. Explore careers with the NJ Department of Labor's In-Demand Occupations list.",
         url: props.location?.pathname || "/in-demand-occupations",
-        image: pageImage,
+        image: typeof pageImage === 'string' ? pageImage : pageImage.src,
       }}
     >
       <HeroBanner

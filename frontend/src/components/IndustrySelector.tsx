@@ -124,7 +124,7 @@ export const IndustrySelector = () => {
                         {active ? "Pathways included" : "Pathways coming soon"}
                       </span>
                       <div className="image">
-                        <img src={image} alt={title} />
+                        <img src={typeof image === 'string' ? image : image.src} alt={title} />
                       </div>
                     </div>
                     <p>{description}</p>

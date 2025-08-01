@@ -75,7 +75,7 @@ export const AllSupportPage = (props: Props): ReactElement => {
       : `Support and Assistance Resources | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
     pageDescription:
       data?.page.pageDescription || "Browse support and assistance resources by category.",
-    image: data?.page.ogImage?.url || pageImage,
+    image: data?.page?.ogImage?.url || (typeof pageImage === 'string' ? pageImage : pageImage.src),
     keywords: data?.page.keywords || [
       "New Jersey",
       "Support",

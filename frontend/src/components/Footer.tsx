@@ -37,7 +37,7 @@ export const Footer = ({
               label="Footer Navigation 2"
             />
           )}
-          <img src={logo} alt="New Jersey logo" />
+          <img src={typeof logo === 'string' ? logo : logo.src} alt="New Jersey logo" />
         </div>
       </div>
       <SubFooter />
