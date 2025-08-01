@@ -40,7 +40,7 @@ export const SearchResultsPage = (props: Props): ReactElement<Props> => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
   const [pageTitle, setPageTitle] = useState<string>(
-    `Advanced Search | Training Explorer | ${process.env.REACT_APP_SITE_NAME}`,
+    `Advanced Search | Training Explorer | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
   );
 
   const filterState = useContext(FilterContext).state;
@@ -92,11 +92,11 @@ export const SearchResultsPage = (props: Props): ReactElement<Props> => {
 
   const getPageTitle = (): void => {
     if (!searchQuery || searchQuery === "null") {
-      setPageTitle(`Advanced Search | Training Explorer | ${process.env.REACT_APP_SITE_NAME}`);
+      setPageTitle(`Advanced Search | Training Explorer | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
     } else {
       const query = decodeURIComponent(searchQuery.replace(/\+/g, " ")).toLocaleLowerCase();
       setPageTitle(
-        `${query} | Advanced Search | Training Explorer | ${process.env.REACT_APP_SITE_NAME}`,
+        `${query} | Advanced Search | Training Explorer | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
       );
     }
   };
@@ -223,9 +223,9 @@ export const SearchResultsPage = (props: Props): ReactElement<Props> => {
       noFooter
       client={props.client}
       seo={{
-        title: pageTitle || `Search | Training Explorer | ${process.env.REACT_APP_SITE_NAME}`,
+        title: pageTitle || `Search | Training Explorer | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
         url: props.location?.pathname || "/training/search",
-        image: pageImage,
+        image: typeof pageImage === 'string' ? pageImage : pageImage.src,
       }}
     >
       {showNoIndexTag && (

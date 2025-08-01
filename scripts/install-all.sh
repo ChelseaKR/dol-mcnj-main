@@ -2,5 +2,5 @@
 
 set -e
 
-npm --prefix=frontend install
+npm --prefix=frontend install --legacy-peer-deps
 npm --prefix=backend install

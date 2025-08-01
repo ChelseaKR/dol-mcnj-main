@@ -39,14 +39,14 @@ export const ErrorBlock = ({
 );
 
 export const ErrorPage = (props: Props): ReactElement => {
-  usePageTitle(`Error | ${process.env.REACT_APP_SITE_NAME}`);
+  usePageTitle(`Error | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
 
   return (
     <Layout
       noFooter
       client={props.client}
       seo={{
-        title: `${process.env.REACT_APP_SITE_NAME}`,
+        title: `${process.env.NEXT_PUBLIC_SITE_NAME}`,
       }}
     >
       <Helmet>

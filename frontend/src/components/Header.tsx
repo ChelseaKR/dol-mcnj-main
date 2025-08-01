@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import { useState } from "react";
 import { useMediaQuery } from "@material-ui/core";
+import { useRouter } from "next/router";
 import njLogo from "../njlogo.svg";
 import { useTranslation } from "react-i18next";
 import { UnstyledButton } from "./UnstyledButton";
@@ -13,6 +14,7 @@ import { SignUpFormModal } from "./SignUpFormModal";
 export const Header = (data: { mainNav?: NavMenuData; globalNav?: NavMenuData }) => {
   const isDesktop = useMediaQuery("(min-width:1025px)");
   const { t } = useTranslation();
+  const router = useRouter();
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -20,7 +22,7 @@ export const Header = (data: { mainNav?: NavMenuData; globalNav?: NavMenuData })
     setIsOpen(!isOpen);
   };
 
-  const contactUrl = window.location.pathname.includes("navigator")
+  const contactUrl = router.pathname.includes("navigator")
   ? "/contact?topic=Career%20Navigator"
   : "/contact";
 
@@ -32,10 +34,10 @@ export const Header = (data: { mainNav?: NavMenuData; globalNav?: NavMenuData })
           <a
             href="/"
             className="link-format-black fin fac width-content"
-            aria-label={process.env.REACT_APP_SITE_NAME}
+            aria-label={process.env.NEXT_PUBLIC_SITE_NAME}
           >
             <img className="mrd" src={njLogo} alt={t("IconAlt.njLogo")} />
-            <h1 className="text-m">{process.env.REACT_APP_SITE_NAME}</h1>
+            <h1 className="text-m">{process.env.NEXT_PUBLIC_SITE_NAME}</h1>
           </a>
           <UnstyledButton onClick={toggleIsOpen} className="link-format-black">
             <div className={`toggle ${isOpen ? "open" : "closed"}`}>
@@ -60,7 +62,7 @@ export const Header = (data: { mainNav?: NavMenuData; globalNav?: NavMenuData })
               icons={true}
               url={contactUrl}
             />
-            {process.env.REACT_APP_SIGNUP_FOR_UPDATES === "true" ? <SignUpFormModal /> : <></>}
+            {process.env.NEXT_PUBLIC_SIGNUP_FOR_UPDATES === "true" ? <SignUpFormModal /> : <></>}
           </div>
         )}
       </div>
@@ -72,9 +74,9 @@ export const Header = (data: { mainNav?: NavMenuData; globalNav?: NavMenuData })
       <>
         <nav id="usaNav" className="usa-nav-container">
           <div className="basic-logo" id="basic-logo">
-            <a href="/" aria-label={process.env.REACT_APP_SITE_NAME}>
+            <a href="/" aria-label={process.env.NEXT_PUBLIC_SITE_NAME}>
               <img className="mrd" src={njLogo} alt={t("IconAlt.njLogo")} />
-              <h1 className="bold">{process.env.REACT_APP_SITE_NAME}</h1>
+              <h1 className="bold">{process.env.NEXT_PUBLIC_SITE_NAME}</h1>
             </a>
           </div>
         </nav>
@@ -96,7 +98,7 @@ export const Header = (data: { mainNav?: NavMenuData; globalNav?: NavMenuData })
                 icons={true}
                 url={contactUrl}
               />
-              {process.env.REACT_APP_SIGNUP_FOR_UPDATES === "true" ? <SignUpFormModal /> : <></>}
+              {process.env.NEXT_PUBLIC_SIGNUP_FOR_UPDATES === "true" ? <SignUpFormModal /> : <></>}
             </div>
           </div>
         </div>

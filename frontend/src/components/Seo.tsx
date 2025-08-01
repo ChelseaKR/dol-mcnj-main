@@ -32,7 +32,7 @@ export const Seo = (props: SeoProps & { noindex?: boolean }) => {
       )}
       <meta property="og:type" content="website" />
       {props.url && <meta property="og:url" content={`https://mycareer.nj.gov${props.url}`} />}
-      <meta property="og:site_name" content={process.env.REACT_APP_SITE_NAME} />
+      <meta property="og:site_name" content={process.env.NEXT_PUBLIC_SITE_NAME} />
     </Helmet>
   );
 };

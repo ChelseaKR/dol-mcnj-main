@@ -57,8 +57,8 @@ export const TrainingExplorerPage = (props: Props): ReactElement => {
 
   const seoObject = {
     title: pageData?.title
-      ? `${pageData?.title} | ${process.env.REACT_APP_SITE_NAME}`
-      : `New Jersey Training Explorer | ${process.env.REACT_APP_SITE_NAME}`,
+      ? `${pageData?.title} | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `New Jersey Training Explorer | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
     description:
       pageData?.pageDescription ||
       "Certifications, Professional Development, Apprenticeships & More!",

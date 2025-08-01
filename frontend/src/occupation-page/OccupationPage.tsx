@@ -141,8 +141,8 @@ export const OccupationPage = (props: Props): ReactElement => {
 
   usePageTitle(
     occupationDetail
-      ? `${occupationDetail.title} | Occupation | ${process.env.REACT_APP_SITE_NAME}`
-      : `Occupation | ${process.env.REACT_APP_SITE_NAME}`,
+      ? `${occupationDetail.title} | Occupation | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `Occupation | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
   );
 
   const generateJsonLd = (detail: OccupationDetail) => {
@@ -175,8 +175,8 @@ export const OccupationPage = (props: Props): ReactElement => {
         client={props.client}
         seo={{
           title: occupationDetail.title
-            ? `${occupationDetail.title} | Occupation | ${process.env.REACT_APP_SITE_NAME}`
-            : `Occupation | ${process.env.REACT_APP_SITE_NAME}`,
+            ? `${occupationDetail.title} | Occupation | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+            : `Occupation | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
           pageDescription: occupationDetail.description,
           url: props.location?.pathname || "/occupation",
         }}
@@ -414,7 +414,7 @@ export const OccupationPage = (props: Props): ReactElement => {
         noFooter
         client={props.client}
         seo={{
-          title: `Occupation | ${process.env.REACT_APP_SITE_NAME}`,
+          title: `Occupation | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
           url: props.location?.pathname,
         }}
       >

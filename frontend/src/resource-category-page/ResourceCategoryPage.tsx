@@ -19,8 +19,8 @@ export const ResourceCategoryPage = (props: Props): ReactElement => {
 
   const seoObject = {
     title: data?.page.items[0].title
-      ? `${data?.page.items[0].title} | Support Resources | ${process.env.REACT_APP_SITE_NAME}`
-      : `Support Resources | ${process.env.REACT_APP_SITE_NAME}`,
+      ? `${data?.page.items[0].title} | Support Resources | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `Support Resources | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
     pageDescription:
       data?.page.items[0].description || "Browse support and assistance resources by category.",
     url: props.location?.pathname || "/support-resources",

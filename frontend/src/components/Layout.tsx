@@ -27,7 +27,7 @@ export const Layout = (props: LayoutProps) => {
   });
   const mainNav = useContentful({
     path: `/nav-menu/${
-      process.env.REACT_APP_FEATURE_CAREER_PATHWAYS === "true"
+      process.env.NEXT_PUBLIC_FEATURE_CAREER_PATHWAYS === "true"
         ? "6z5HiOP5HqvJc07FURpT8Z"
         : "3jcP5Uz9OY7syy4zu9Viul"
     }`,
@@ -45,7 +45,7 @@ export const Layout = (props: LayoutProps) => {
   };
 
   const defaultSeo = {
-    title: process.env.REACT_APP_SITE_NAME as string,
+    title: process.env.NEXT_PUBLIC_SITE_NAME as string,
     keywords: defaultKeywords,
     pageDescription:
       "Explore My Career NJ to find job training, career resources, and employment opportunities with the New Jersey Department of Labor.",
@@ -65,7 +65,7 @@ export const Layout = (props: LayoutProps) => {
 
   return (
     <>
-      {process.env.REACT_APP_FEATURE_MAINTENANCE === "true" && (
+      {process.env.NEXT_PUBLIC_FEATURE_MAINTENANCE === "true" && (
         <AlertBar
           copy="We will perform routine maintenance Tuesday, March 12, 2024 from 12 am to 6 am EST. My Career NJ and its applications (Training Explorer and Career Navigator)
             will be temporarily inaccessible during this period. We apologize for any inconvenience."
@@ -75,9 +75,9 @@ export const Layout = (props: LayoutProps) => {
           dismissible
         />
       )}
-      {process.env.REACT_APP_FEATURE_BETA === "true" && (
+      {process.env.NEXT_PUBLIC_FEATURE_BETA === "true" && (
         <AlertBar
-          copy={process.env.REACT_APP_FEATURE_BETA_MESSAGE}
+          copy={process.env.NEXT_PUBLIC_FEATURE_BETA_MESSAGE}
           type="info"
           className="beta-alert"
         />

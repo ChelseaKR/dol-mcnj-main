@@ -29,7 +29,7 @@ export const LandingPage = (props: Props): ReactElement => {
   usePageTitle(pageData?.title);
 
   const seoObject = {
-    title: pageData?.title || (process.env.REACT_APP_SITE_NAME as string),
+    title: pageData?.title || (process.env.NEXT_PUBLIC_SITE_NAME as string),
     pageDescription:
       "Explore My Career NJ to find job training, career resources, and employment opportunities with the New Jersey Department of Labor.",
     image: pageData?.ogImage?.url || pageImage,

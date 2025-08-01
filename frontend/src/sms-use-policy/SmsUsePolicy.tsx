@@ -11,15 +11,15 @@ interface Props extends RouteComponentProps {
 }
 
 export const SmsUsePolicyPage = (props: Props): ReactElement => {
-  usePageTitle(`SMS Use Policy | ${process.env.REACT_APP_SITE_NAME}`);
+  usePageTitle(`SMS Use Policy | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
   const { t } = useTranslation();
 
   return (
     <Layout
       client={props.client}
       seo={{
-        title: `SMS Use Policy | ${process.env.REACT_APP_SITE_NAME}`,
-        pageDescription: `SMS Use Policy for ${process.env.REACT_APP_SITE_NAME}`,
+        title: `SMS Use Policy | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
+        pageDescription: `SMS Use Policy for ${process.env.NEXT_PUBLIC_SITE_NAME}`,
         url: props.location?.pathname || "/sms-use-policy",
       }}
     >

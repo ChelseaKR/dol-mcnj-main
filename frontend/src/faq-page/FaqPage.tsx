@@ -40,11 +40,11 @@ export const FaqPage = (props: Props): ReactElement<Props> => {
 
   const seoObject = {
     title: data
-      ? `${data?.page?.title} | ${process.env.REACT_APP_SITE_NAME}`
-      : `Frequently Asked Questions | ${process.env.REACT_APP_SITE_NAME}`,
+      ? `${data?.page?.title} | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `Frequently Asked Questions | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
     pageDescription:
       data?.page?.pageDescription || "Get answers to all of your My Career NJ questions",
-    image: data?.page?.ogImage?.url || pageImage,
+    image: data?.page?.ogImage?.url || (typeof pageImage === 'string' ? pageImage : pageImage.src),
     keywords: data?.page?.keywords || [
       "FAQ",
       "Frequently Asked Questions",

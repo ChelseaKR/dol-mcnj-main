@@ -55,7 +55,7 @@ export const TrainingPage = (props: Props): ReactElement => {
   const [error, setError] = useState<Error | null>(null);
   const [copy, setCopy] = useState<Copy | null>(null);
   const componentRef = useRef<HTMLDivElement>(null);
-  usePageTitle(`${training?.name} | Training | ${process.env.REACT_APP_SITE_NAME}`);
+  usePageTitle(`${training?.name} | Training | ${process.env.NEXT_PUBLIC_SITE_NAME}`);
 
   useEffect(() => {
     setLoading(true); // Start loading
@@ -314,8 +314,8 @@ export const TrainingPage = (props: Props): ReactElement => {
   };
   const seoObject = {
     title: training
-      ? `${training ? training.name : ""} | Training | ${process.env.REACT_APP_SITE_NAME}`
-      : `Training | ${process.env.REACT_APP_SITE_NAME}`,
+      ? `${training ? training.name : ""} | Training | ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `Training | ${process.env.NEXT_PUBLIC_SITE_NAME}`,
     pageDescription: training?.description,
     url: props.location?.pathname || "/training",
   };
