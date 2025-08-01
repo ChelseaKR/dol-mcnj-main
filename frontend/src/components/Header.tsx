@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import { useState } from "react";
 import { useMediaQuery } from "@material-ui/core";
+import { useRouter } from "next/router";
 import njLogo from "../njlogo.svg";
 import { useTranslation } from "react-i18next";
 import { UnstyledButton } from "./UnstyledButton";
@@ -13,6 +14,7 @@ import { SignUpFormModal } from "./SignUpFormModal";
 export const Header = (data: { mainNav?: NavMenuData; globalNav?: NavMenuData }) => {
   const isDesktop = useMediaQuery("(min-width:1025px)");
   const { t } = useTranslation();
+  const router = useRouter();
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -20,7 +22,7 @@ export const Header = (data: { mainNav?: NavMenuData; globalNav?: NavMenuData })
     setIsOpen(!isOpen);
   };
 
-  const contactUrl = window.location.pathname.includes("navigator")
+  const contactUrl = router.pathname.includes("navigator")
   ? "/contact?topic=Career%20Navigator"
   : "/contact";
 
