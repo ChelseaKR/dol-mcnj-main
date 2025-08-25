@@ -6,19 +6,31 @@ export default function TestSurveyModal() {
       <h1 className="text-2xl font-bold mb-6">SurveyMonkey Modal Test Page</h1>
       
       <div className="space-y-4">
-        <p>Click on any of these navigation links to test the SurveyMonkey modal:</p>
+        <div className="p-4 bg-blue-100 rounded mb-6">
+          <h2 className="text-lg font-semibold mb-2">⚠️ Important Note:</h2>
+          <p>The SurveyMonkey modal will <strong>only show when leaving the landing page (/) to go to another page</strong>.</p>
+          <p>Since you are currently on the test page (/test-survey-modal), the modal will <strong>NOT</strong> appear when clicking these links.</p>
+          <p>To test the modal:</p>
+          <ol className="list-decimal list-inside mt-2">
+            <li>Go to the <LinkObject url="/">landing page (/)</LinkObject></li>
+            <li>Click on any navigation link from there</li>
+            <li>The modal should appear</li>
+          </ol>
+        </div>
+        
+        <p>These links are for testing navigation from this non-landing page (modal should NOT show):</p>
         
         <div className="space-y-2">
           <div>
-            <LinkObject url="/faq">FAQ Page (should show modal)</LinkObject>
+            <LinkObject url="/faq">FAQ Page (modal will NOT show from this page)</LinkObject>
           </div>
           
           <div>
-            <LinkObject url="/contact">Contact Page (should show modal)</LinkObject>
+            <LinkObject url="/contact">Contact Page (modal will NOT show from this page)</LinkObject>
           </div>
           
           <div>
-            <LinkObject url="/training">Training Page (should show modal)</LinkObject>
+            <LinkObject url="/training">Training Page (modal will NOT show from this page)</LinkObject>
           </div>
           
           <div>
@@ -26,18 +38,20 @@ export default function TestSurveyModal() {
           </div>
           
           <div>
-            <LinkObject url="https://www.nj.gov">External link (should show modal)</LinkObject>
+            <LinkObject url="https://www.nj.gov">External link (modal will NOT show from this page)</LinkObject>
           </div>
         </div>
         
         <div className="mt-8 p-4 bg-gray-100 rounded">
-          <h2 className="text-lg font-semibold mb-2">How to test:</h2>
+          <h2 className="text-lg font-semibold mb-2">How to test the modal properly:</h2>
           <ol className="list-decimal list-inside space-y-1">
-            <li>Click on any navigation link above (except the anchor link)</li>
+            <li>Go to the <LinkObject url="/">landing page (/)</LinkObject></li>
+            <li>Click on any navigation link from the landing page</li>
             <li>The SurveyMonkey modal should appear</li>
             <li>Close the modal using the X button, clicking outside, or pressing Escape</li>
-            <li>The modal should not appear again for subsequent navigation clicks</li>
-            <li>Clear localStorage and refresh to reset the dismissal state</li>
+            <li>You'll be navigated to your intended destination</li>
+            <li>The modal should not appear again for subsequent navigation clicks from any page</li>
+            <li>Use the reset button below to clear localStorage and test again</li>
           </ol>
         </div>
         

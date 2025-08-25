@@ -1,6 +1,7 @@
 "use client";
 import { ArrowSquareOut, House } from "@phosphor-icons/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useSurveyModal } from "@components/contexts/SurveyModalContext";
 
 interface LinkObjectProps {
@@ -27,11 +28,13 @@ const LinkObject = ({
   style,
 }: LinkObjectProps) => {
   const { showModal, shouldShowModal } = useSurveyModal();
+  const pathname = usePathname();
   
   const isInternal = url.startsWith("/");
   const isHomePage = url === "/";
   const hasHttp = !isInternal && url.startsWith("http");
   const isHashLink = url.startsWith("#");
+  const isLeavingLandingPage = pathname === "/" && !isHashLink && url !== "/";
   
   const handleNavigation = (e: React.MouseEvent) => {
     // Don't show modal for hash links (same-page navigation)
@@ -51,8 +54,8 @@ const LinkObject = ({
       return;
     }
     
-    // For navigation links, show modal if not dismissed
-    if (shouldShowModal() && !isHashLink) {
+    // Only show modal when leaving the landing page (/) to go to another page
+    if (isLeavingLandingPage && shouldShowModal()) {
       e.preventDefault();
       showModal(url);
     }
