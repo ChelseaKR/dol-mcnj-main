@@ -1,8 +1,6 @@
 "use client";
 import { ArrowSquareOut, House } from "@phosphor-icons/react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useSurveyModal } from "@components/contexts/SurveyModalContext";
 
 interface LinkObjectProps {
   children: React.ReactNode;
@@ -27,44 +25,9 @@ const LinkObject = ({
   url,
   style,
 }: LinkObjectProps) => {
-  const { showModal, shouldShowModal } = useSurveyModal();
-  const pathname = usePathname();
-  
   const isInternal = url.startsWith("/");
   const isHomePage = url === "/";
   const hasHttp = !isInternal && url.startsWith("http");
-  const isHashLink = url.startsWith("#");
-  const isLeavingLandingPage = pathname === "/" && !isHashLink && url !== "/";
-  
-  const handleNavigation = (e: React.MouseEvent) => {
-    // Don't show modal for hash links (same-page navigation)
-    if (isHashLink) {
-      e.preventDefault();
-      const id = url.replace("#", "");
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-      if (onClick) {
-        onClick();
-      }
-      return;
-    }
-    
-    // Only show modal when leaving the landing page (/) to go to another page
-    if (isLeavingLandingPage && shouldShowModal()) {
-      e.preventDefault();
-      showModal(url);
-    }
-    
-    if (onClick) {
-      onClick();
-    }
-  };
-  
   return isInternal ? (
     <Link
       id={id}
@@ -73,7 +36,23 @@ const LinkObject = ({
       href={url}
       target={target}
       rel={target === "_blank" ? "noopener noreferrer" : undefined}
-      onClick={handleNavigation}
+      onClick={(e) => {
+        if (url.startsWith("#")) {
+          e.preventDefault();
+          // scroll to anchor
+          const id = url.replace("#", "");
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        }
+        if (onClick) {
+          onClick();
+        }
+      }}
       style={style}
     >
       {children}
@@ -89,7 +68,23 @@ const LinkObject = ({
       href={url.startsWith("#") ? url : !hasHttp ? `https://${url}` : url}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={handleNavigation}
+      onClick={(e) => {
+        if (url.startsWith("#")) {
+          e.preventDefault();
+          // scroll to anchor
+          const id = url.replace("#", "");
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        }
+        if (onClick) {
+          onClick();
+        }
+      }}
       style={style}
     >
       {children}
