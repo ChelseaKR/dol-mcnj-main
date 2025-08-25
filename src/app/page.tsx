@@ -4,6 +4,7 @@ import { HOMEPAGE_DATA as pageData } from "@data/pages/home";
 import { SupportedLanguages, ThemeColors } from "@utils/types/types";
 import { cookies } from "next/headers";
 import { Card } from "@components/modules/Card";
+import { SurveyMonkeyModal } from "@components/blocks/SurveyMonkeyModal";
 
 export const revalidate = 86400;
 
@@ -72,6 +73,12 @@ export default async function Home() {
           </div>
         </div>
       </div>
+      {/* SurveyMonkey Modal - will auto-trigger after 10 seconds */}
+      <SurveyMonkeyModal 
+        lang={lang} 
+        autoTrigger={true}
+        triggerDelay={10000}
+      />
     </>
   );
 }
