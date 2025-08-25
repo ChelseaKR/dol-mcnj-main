@@ -17,6 +17,8 @@ import { GLOBAL_NAV_DATA as globalNav } from "@data/global/navigation/global";
 import { SupportedLanguages } from "@utils/types/types";
 import { Metadata } from "next";
 import { LangSelector } from "@components/global/LangSelector";
+import { SurveyModalProvider } from "@components/contexts/SurveyModalContext";
+import { SurveyModalManager } from "@components/blocks/SurveyModalManager";
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
@@ -38,54 +40,57 @@ export default async function RootLayout({
   return (
     <html lang={lang || "en"}>
       <body className={publicSans.className}>
-        <Script src="https://newjersey.github.io/njwds/dist/js/uswds.min.js" />
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`
-            window.allowedHosts = ['mycareer.nj.gov', 'test.mycareer.nj.gov', 'dev.mycareer.nj.gov'];
-            window.hostname = document.location.hostname;
+        <SurveyModalProvider>
+          <Script src="https://newjersey.github.io/njwds/dist/js/uswds.min.js" />
+          <Script id="google-tag-manager" strategy="afterInteractive">
+            {`
+              window.allowedHosts = ['mycareer.nj.gov', 'test.mycareer.nj.gov', 'dev.mycareer.nj.gov'];
+              window.hostname = document.location.hostname;
 
-            if (window.allowedHosts.includes(window.hostname)) {
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-KBN58VK9');
-            }
-          `}
-        </Script>
-        <main>
-          {process.env.REACT_APP_FEATURE_MAINTENANCE === "true" && (
-            <Alert
-              copy="We will perform routine maintenance Tuesday, March 12, 2024 from 12 am to 6 am EST. My Career NJ and its applications (Training Explorer and Career Navigator)
-        will be temporarily inaccessible during this period. We apologize for any inconvenience."
-              heading="Scheduled Maintenance"
-              type="warning"
-              alertId="maintenance"
-              dismissible
+              if (window.allowedHosts.includes(window.hostname)) {
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-KBN58VK9');
+              }
+            `}
+          </Script>
+          <main>
+            {process.env.REACT_APP_FEATURE_MAINTENANCE === "true" && (
+              <Alert
+                copy="We will perform routine maintenance Tuesday, March 12, 2024 from 12 am to 6 am EST. My Career NJ and its applications (Training Explorer and Career Navigator)
+          will be temporarily inaccessible during this period. We apologize for any inconvenience."
+                heading="Scheduled Maintenance"
+                type="warning"
+                alertId="maintenance"
+                dismissible
+              />
+            )}
+            {process.env.REACT_APP_FEATURE_BETA === "true" && (
+              <Alert
+                copy={process.env.REACT_APP_FEATURE_BETA_MESSAGE as string}
+                type="info"
+                className="beta-alert"
+              />
+            )}
+            <SkipToMain />
+            <Header globalNav={globalNav} mainNav={mainNav} lang={lang} />
+            {process.env.REACT_APP_FEATURE_MULTILANG === "true" && (
+              <LangSelector />
+            )}
+            <div id="main-content">{children}</div>
+            <Footer
+              lang={lang}
+              items={{
+                footerNav1,
+                footerNav2,
+              }}
             />
-          )}
-          {process.env.REACT_APP_FEATURE_BETA === "true" && (
-            <Alert
-              copy={process.env.REACT_APP_FEATURE_BETA_MESSAGE as string}
-              type="info"
-              className="beta-alert"
-            />
-          )}
-          <SkipToMain />
-          <Header globalNav={globalNav} mainNav={mainNav} lang={lang} />
-          {process.env.REACT_APP_FEATURE_MULTILANG === "true" && (
-            <LangSelector />
-          )}
-          <div id="main-content">{children}</div>
-          <Footer
-            lang={lang}
-            items={{
-              footerNav1,
-              footerNav2,
-            }}
-          />
-        </main>
-        <BackToTop />
+          </main>
+          <BackToTop />
+          <SurveyModalManager />
+        </SurveyModalProvider>
       </body>
     </html>
   );
