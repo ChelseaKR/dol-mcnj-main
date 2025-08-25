@@ -3,13 +3,25 @@ import { SurveyModalProvider, useSurveyModal } from "../SurveyModalContext";
 import "@testing-library/jest-dom";
 
 // Mock localStorage
-const localStorageMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  removeItem: jest.fn(),
-  clear: jest.fn(),
-};
-global.localStorage = localStorageMock as any;
+const localStorageMock = (() => {
+  let store: Record<string, string> = {};
+  return {
+    getItem: jest.fn((key: string) => store[key] || null),
+    setItem: jest.fn((key: string, value: string) => {
+      store[key] = value;
+    }),
+    removeItem: jest.fn((key: string) => {
+      delete store[key];
+    }),
+    clear: jest.fn(() => {
+      store = {};
+    }),
+  };
+})();
+
+Object.defineProperty(window, 'localStorage', {
+  value: localStorageMock,
+});
 
 // Mock window.location
 delete (window as any).location;
@@ -33,11 +45,10 @@ const TestComponent = () => {
 describe("SurveyModalContext", () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    localStorageMock.clear();
   });
 
   it("provides modal state and functions", () => {
-    localStorageMock.getItem.mockReturnValue(null);
-
     render(
       <SurveyModalProvider>
         <TestComponent />
@@ -49,8 +60,6 @@ describe("SurveyModalContext", () => {
   });
 
   it("shows modal when showModal is called and not dismissed", () => {
-    localStorageMock.getItem.mockReturnValue(null);
-
     render(
       <SurveyModalProvider>
         <TestComponent />
@@ -64,7 +73,8 @@ describe("SurveyModalContext", () => {
   });
 
   it("does not show modal when previously dismissed", () => {
-    localStorageMock.getItem.mockReturnValue("true");
+    // Set the dismissed flag before rendering
+    localStorageMock.setItem("surveyMonkeyModalDismissed", "true");
 
     render(
       <SurveyModalProvider>
@@ -80,8 +90,6 @@ describe("SurveyModalContext", () => {
   });
 
   it("closes modal when closeModal is called", () => {
-    localStorageMock.getItem.mockReturnValue(null);
-
     render(
       <SurveyModalProvider>
         <TestComponent />
